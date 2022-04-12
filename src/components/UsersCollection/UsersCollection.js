@@ -1,13 +1,15 @@
 import LoginPrompt from '../AuthButton/LoginPrompt';
 import UsersCollectionInfo from './UsersCollectionInfo';
 
-const UsersCollection = ({ accounts }) => {
-  const isConnected = Boolean(accounts[0]);
-
+const UsersCollection = ({ defaultAccount, isLoggedIn }) => {
+ 
   return (
     <>
-       {isConnected ? (
-         <UsersCollectionInfo/>
+       {isLoggedIn? (
+         <UsersCollectionInfo
+            defaultAccount = {defaultAccount}
+            isLoggedIn = {isLoggedIn}
+         />
        ): (
          <LoginPrompt/>
        )} 

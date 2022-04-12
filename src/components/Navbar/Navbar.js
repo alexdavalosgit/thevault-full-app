@@ -3,7 +3,7 @@ import AuthButton from "../AuthButton/AuthButton";
 
 
 
-function Navbar({ defaultAccount, setDefaultAccount, errorMessage, setErrorMessage, isLoggedIn, setIsLoggedIn }) {
+function Navbar({ defaultAccount, isLoggedIn, connButtonText, connectWallet, setErrorMessage, errorMessage}) {
     return ( 
         <>
             <h3>THE VAULT - NAVBAR</h3>
@@ -18,11 +18,11 @@ function Navbar({ defaultAccount, setDefaultAccount, errorMessage, setErrorMessa
             {/* Connect */}
             <AuthButton
                 defaultAccount = {defaultAccount}
-                setDefaultAccount = {setDefaultAccount}
                 errorMessage = {errorMessage}
                 setErrorMessage = {setErrorMessage}
                 isLoggedIn = {isLoggedIn}
-                setIsLoggedIn = {setIsLoggedIn}
+                connButtonText = {connButtonText}
+                connectWallet = {connectWallet}
             />      
         </>
      
