@@ -1,19 +1,18 @@
 import LoginPrompt from '../AuthButton/LoginPrompt';
-import UsersCollectionInfo from './UsersCollectionInfo';
+import UsersCollectionCard from './UsersCollectionCard';
 
-const UsersCollection = ({ defaultAccount, isLoggedIn }) => {
+const UsersCollection = ({ defaultAccount, isLoggedIn, nfts }) => {
  
   return (
-    <>
-       {isLoggedIn? (
-         <UsersCollectionInfo
-            defaultAccount = {defaultAccount}
-            isLoggedIn = {isLoggedIn}
-         />
-       ): (
-         <LoginPrompt/>
-       )} 
-    </>  
+    <div>
+      <h3 className='job'> My NFTs:</h3>
+        <div className='collection'>
+            {nfts.map((nft, index) => {
+              return <UsersCollectionCard nft={nft} key={index}/>
+            })}
+        </div>
+      
+    </div>
   )
 };
 

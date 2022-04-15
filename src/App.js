@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header/Header';
 import UsersCollection from './components/UsersCollection/UsersCollection';
@@ -8,8 +8,7 @@ import './App.css';
 
 
 function App() {
-  //const [accounts, setAccounts] = useState([]);
-  // Wallet Connection Vars
+  const [nfts, setNfts] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,6 +31,21 @@ function App() {
       window.alert(errorMessage);
     }
   }
+
+  const getNftData = async () => {
+    // Cancel function if no address connected
+    if(!defaultAccount) return
+    // Get NFT Data from Account
+    const response = await fetch(`https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:0x60f80121c31a0d46b5279700f9df786054aa5ee5`);
+    const data = await response.json();
+    setNfts(data.items);
+    console.log(data);
+  
+  }
+
+  useEffect(() => {
+    getNftData();
+  }, [defaultAccount]);
 
   // Establish Logged in logic
   const checkLoggedIn = () => {
@@ -75,6 +89,7 @@ function App() {
       <UsersCollection
         defaultAccount = {defaultAccount}
         isLoggedIn = {isLoggedIn}
+        nfts = {nfts}
       /> 
       <About/> 
       <Footer/>
