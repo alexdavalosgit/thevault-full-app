@@ -22,11 +22,19 @@ function Header({}) {
         await window.ethereum.request({ method: 'eth_requestAccounts' });
     }
 
-    async function showVaultContents() {
-        if(window.ethereum) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            const contract = new ethers.Contract(theVaultAddress, theVault.abi, provider);
-            console.log(contract.mainVault);
+    // Get Vault NFTS
+    async function getArrayNfts() {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(theVaultAddress, theVault.abi, signer);
+        try {
+            const response = await contract.getArrayElements();
+            const {_hex} = response[1].tokenId;
+            console.log('response: ', response);  
+            console.log('tokenId: ', parseInt(response[1].tokenId._hex));
+            console.log('contract address: ', response[0].contractAddress);
+        } catch(err) {
+            console.log('error: ', err);
         }
     }
 
@@ -82,6 +90,7 @@ function Header({}) {
         }
     }
 
+
     return ( 
         <>
             <div className="main-container">
@@ -105,7 +114,7 @@ function Header({}) {
                             <button onClick={handleDeposit}>Deposit</button>
                             <div>tokenId: {nftTokenId} contractAddress:{nftContractAddress}</div>
 
-                            <button onClick={showVaultContents}>show vault contents</button>
+                            <button onClick={getArrayNfts}>show vault contents</button>
                    
                     </div>
                 </div>

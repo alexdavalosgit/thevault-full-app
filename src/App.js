@@ -47,16 +47,7 @@ function App() {
     getNftData();
   }, [defaultAccount]);
 
-  // Establish Logged in logic
-  const checkLoggedIn = () => {
-    if(defaultAccount !== '') {
-      console.log('You are logged in');
-      //setIsLoggedIn(true);
-    } else {
-      console.log("You are not logged in");
-      //setIsLoggedIn(false);
-    }
-  }
+
   // Connects address to site
   const connectHandler= () => {
     setConnButtonText('Disconnect');
