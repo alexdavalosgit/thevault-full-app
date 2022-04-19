@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import AuthButton from "../AuthButton/AuthButton";
 
 
@@ -7,7 +8,6 @@ function Navbar({ defaultAccount, isLoggedIn, connButtonText, connectWallet, set
     return ( 
         <>
             <h3>THE VAULT - NAVBAR</h3>
-            <br/>
             {/* Left Side - Social Media Icons */}
             <div>
                 <a href='https://twitter.com'>Twitter</a> <br/>
