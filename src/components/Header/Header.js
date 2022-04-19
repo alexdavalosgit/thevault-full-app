@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ethers, BigNumber } from 'ethers';
+import { Link } from 'react-router-dom';
 import theVault from '../../artifacts/contracts/TheVault.sol/TheVault.json';
 import nftContract from '../../artifacts/@openzeppelin/contracts/token/ERC721/ERC721.sol/ERC721.json';
 import TopCollections from "../TopCollections/TopCollections";
@@ -7,11 +8,6 @@ import HeaderInfo from "./HeaderInfo"
 import './Header.css'
 
 const theVaultAddress = "0x68afBaAe6371f81Ac2b0334F11CF5Dd5eceF28e7";
-
-const abi = [
-    // Read-Only Functions
-    "function getArrayElements() public view returns(Nft[] memory)"
-];
 
 function Header({}) {
     const [nftContractAddress, setNftContractAddress] = useState('');
@@ -29,10 +25,18 @@ function Header({}) {
         const contract = new ethers.Contract(theVaultAddress, theVault.abi, signer);
         try {
             const response = await contract.getArrayElements();
-            const {_hex} = response[1].tokenId;
             console.log('response: ', response);  
-            console.log('tokenId: ', parseInt(response[1].tokenId._hex));
-            console.log('contract address: ', response[0].contractAddress);
+            // map through array
+            for(let i = 0; i < response.length; i++) {
+                const {_hex} = response[i].tokenId;
+                const _tokenId = parseInt(response[i].tokenId._hex);
+                const _contractAddress = response[i].contractAddress;
+                console.log('tokenId: ', _tokenId);
+                console.log('contract address: ', _contractAddress);
+               
+            }
+           
+          
         } catch(err) {
             console.log('error: ', err);
         }
@@ -119,6 +123,7 @@ function Header({}) {
                     </div>
                 </div>
                 <TopCollections />
+                <Link to="/vault-collection">View All</Link> 
             </div>
                 
         </>

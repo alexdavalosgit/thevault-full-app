@@ -8,27 +8,13 @@ import Navbar from './components/Navbar/Navbar';
 
 
 function App() {
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [defaultAccount, setDefaultAccount] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [connButtonText, setConnButtonText] = useState('Connect Wallet');
+ 
   return (
     <Router>
-          <nav>
-            The Vault Navbar <br/>
-            <Link to="/home">Home</Link> <br/>
-            <Link to="/vaultcollection">View Vault</Link>  <br/>
-          </nav>
         <Routes>
-          <Route path="/home" element={<Home
-                                         defaultAccount = {defaultAccount}
-                                         errorMessage = {errorMessage}
-                                         setErrorMessage = {setErrorMessage}
-                                         isLoggedIn = {isLoggedIn}
-                                         connButtonText = {connButtonText}
-                                         connectWallet = {connectWallet}
-                                         />}></Route>
-          <Route path="/vaultcollection" element={<TopCollections/>}></Route>
+          <Route path="/home" element={<Home/>}></Route>
+          <Route path="/vault-collection" element={<TopCollections/>}></Route>
+          <Route path="/" element={<LaunchApp/>}></Route>
         </Routes>
     </Router>
    

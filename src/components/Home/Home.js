@@ -9,7 +9,10 @@ import '../../App.css';
 
 function Home() {
   const [nfts, setNfts] = useState([]);
-
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [defaultAccount, setDefaultAccount] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [connButtonText, setConnButtonText] = useState('Connect Wallet');
 
   // Main connection handler
   const connectWallet = async () => {
