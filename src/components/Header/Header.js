@@ -33,10 +33,7 @@ function Header({}) {
                 const _contractAddress = response[i].contractAddress;
                 console.log('tokenId: ', _tokenId);
                 console.log('contract address: ', _contractAddress);
-               
             }
-           
-          
         } catch(err) {
             console.log('error: ', err);
         }
