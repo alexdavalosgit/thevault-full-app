@@ -7,7 +7,7 @@ import TopCollections from "../TopCollections/TopCollections";
 import HeaderInfo from "./HeaderInfo"
 import './Header.css'
 
-const theVaultAddress = "0x68afBaAe6371f81Ac2b0334F11CF5Dd5eceF28e7";
+const theVaultAddress = "0x8181236bf43Cb09C34048f11510B943921EfE601";
 
 function Header({}) {
     const [nftContractAddress, setNftContractAddress] = useState('');
