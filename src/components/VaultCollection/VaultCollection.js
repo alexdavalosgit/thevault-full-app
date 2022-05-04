@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ethers, BigNumber } from 'ethers';
+import { Link } from 'react-router-dom';
 import theVault from '../../artifacts/contracts/TheVault.sol/TheVault.json';
 
 function VaultCollection() {
@@ -39,9 +40,9 @@ function VaultCollection() {
             return <p>Loading...</p>
         } 
             return (
-                vaultNfts.map( nft => {
-                    return <div>
-                        <h1>#{nft[0]} - {nft[1]}</h1>
+                vaultNfts.map( (nft, index) => {
+                    return <div key={index}>
+                        <h3>#{nft[0]} - {nft[1]}</h3>
                     </div>
                 })
             )
@@ -55,6 +56,7 @@ function VaultCollection() {
 
     return (
         <div>
+            <Link to="/home">Home</Link>
             <p>Vault Collection</p>   
             <button onClick={()=> console.log(vaultNfts)}>console log vaultnfts</button>   
             {displayNfts()}
