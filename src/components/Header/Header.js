@@ -15,6 +15,7 @@ function Header({}) {
     const [vault, setVault] = useState([]);
     const [depositStatus, setDepositStatus] = useState(false);
     const [randomNft, setRandomNft] = useState([]);
+    const [withdrawLoading, setWithdrawLoading] = useState(true);
 
     async function requestAccount() {
         await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -33,6 +34,15 @@ function Header({}) {
             }
         } else console.log("failed txn test");
     
+    }
+
+    // Get random Nft
+    const displayRandomNft = () => {
+        if(withdrawLoading &&  randomNft == []) {
+            return <p>Rolling your NFT...</p>
+        } if(!withdrawLoading && randomNft !== []) {
+            return <p>You have rolled {randomNft}</p>
+        } return
     }
 
     // Get Vault NFTS
@@ -110,19 +120,23 @@ function Header({}) {
 
             try {
                 const response = await contract.withdraw();
-                //const tempNft = await response.callStatic.randomNft();
+                setWithdrawLoading(true);
                 console.log('response: ', response);  
-                //console.log(tempNft);
+
                 const txHash = response.hash;
                 const txData = await provider.waitForTransaction(txHash).then(provider.getTransactionReceipt(txHash));
                 console.log("txData: ", txData);
+
                 const logs = txData.logs[1];
                 const _tokenId = parseInt(logs.topics[3]);
                 const _contractAddress = logs.address;
                 console.log(_tokenId);
                 console.log(_contractAddress);
+
                 setRandomNft([_tokenId, _contractAddress]);
+                setWithdrawLoading(false);
                 console.log(randomNft);
+                setRandomNft([]);
             } catch(err) {
                 console.log('error: ', err);
             }
@@ -154,6 +168,7 @@ function Header({}) {
 
                             <button onClick={getArrayNfts}>show vault contents</button>
                             <button onClick={() => console.log(randomNft)}>random nft</button>
+                            {displayRandomNft()}
                    
                     </div>
                 </div>
