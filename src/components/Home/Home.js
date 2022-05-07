@@ -45,7 +45,7 @@ function Home() {
 
   useEffect(() => {
     getNftData();
-  }, [defaultAccount]);
+  }, []);
 
 
   // Connects address to site
