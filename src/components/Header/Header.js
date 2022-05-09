@@ -4,18 +4,23 @@ import { Link } from 'react-router-dom';
 import theVault from '../../artifacts/contracts/TheVault.sol/TheVault.json';
 import nftContract from '../../artifacts/@openzeppelin/contracts/token/ERC721/ERC721.sol/ERC721.json';
 import TopCollections from "../TopCollections/TopCollections";
-import HeaderInfo from "./HeaderInfo"
+import HeaderInfo from "./HeaderInfo";
+import Loading from "../Loading/Loading";
 import './Header.css'
+import Popup from '../Popup/Popup';
+import RandomNft from '../RandomNft/RandomNft';
 
 const theVaultAddress = "0x8181236bf43Cb09C34048f11510B943921EfE601";
 
-function Header({}) {
+function Header({trigger, setTrigger}) {
     const [nftContractAddress, setNftContractAddress] = useState('');
     const [nftTokenId, setNftTokenId] = useState(0);
     const [vault, setVault] = useState([]);
     const [depositStatus, setDepositStatus] = useState(false);
     const [randomNft, setRandomNft] = useState([]);
     const [withdrawLoading, setWithdrawLoading] = useState(true);
+    const [displayPopup, setDisplayPopup] = useState(false);
+   
 
     async function requestAccount() {
         await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -34,15 +39,6 @@ function Header({}) {
             }
         } else console.log("failed txn test");
     
-    }
-
-    // Get random Nft
-    const displayRandomNft = () => {
-        if(withdrawLoading &&  randomNft == []) {
-            return <p>Rolling your NFT...</p>
-        } if(!withdrawLoading && randomNft !== []) {
-            return <p>You have rolled {randomNft}</p>
-        } return
     }
 
     // Get Vault NFTS
@@ -121,6 +117,7 @@ function Header({}) {
             try {
                 const response = await contract.withdraw();
                 setWithdrawLoading(true);
+                setDisplayPopup(true);
                 console.log('response: ', response);  
 
                 const txHash = response.hash;
@@ -140,7 +137,16 @@ function Header({}) {
             } catch(err) {
                 console.log('error: ', err);
             }
-        }
+        } 
+    }
+
+     // Get random Nft
+     const displayRandomNft = () => {
+       if(withdrawLoading == true) {
+           return (<Popup trigger={withdrawLoading}><Loading/></Popup>)
+       } else return (<Popup trigger={displayPopup} setTrigger={setDisplayPopup}>
+           <RandomNft></RandomNft>
+       </Popup>)
     }
 
     return ( 
@@ -174,6 +180,7 @@ function Header({}) {
                 </div>
                 <TopCollections />
                 <Link to="/vault-collection">View All</Link> 
+                {displayRandomNft()}
             </div>
                 
         </>
