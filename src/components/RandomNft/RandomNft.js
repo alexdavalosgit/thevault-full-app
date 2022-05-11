@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-const RandomNft = ({}) => {
+const RandomNft = ({nft}) => {
   
   return (
     <article className='review'>
@@ -14,7 +14,7 @@ const RandomNft = ({}) => {
               className='person-img'
           />
       </div>
-      <h4 className='author'>nft</h4>
+      <h4 className='author'>#{nft[0]} - CA: {nft[1]}</h4>
   </article>
   )
 };

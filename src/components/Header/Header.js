@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ethers, BigNumber } from 'ethers';
 import { Link } from 'react-router-dom';
 import theVault from '../../artifacts/contracts/TheVault.sol/TheVault.json';
@@ -9,17 +9,20 @@ import Loading from "../Loading/Loading";
 import './Header.css'
 import Popup from '../Popup/Popup';
 import RandomNft from '../RandomNft/RandomNft';
+import Error from '../Error/Error';
 
 const theVaultAddress = "0x8181236bf43Cb09C34048f11510B943921EfE601";
 
-function Header({trigger, setTrigger}) {
+function Header({}) {
     const [nftContractAddress, setNftContractAddress] = useState('');
     const [nftTokenId, setNftTokenId] = useState(0);
     const [vault, setVault] = useState([]);
     const [depositStatus, setDepositStatus] = useState(false);
     const [randomNft, setRandomNft] = useState([]);
-    const [withdrawLoading, setWithdrawLoading] = useState(true);
+    const [withdrawLoading, setWithdrawLoading] = useState(false);
     const [displayPopup, setDisplayPopup] = useState(false);
+    const [withdrawError, setWithdrawError] = useState(false);
+    const [color, setColor] = useState('#50E3C2');
    
 
     async function requestAccount() {
@@ -117,36 +120,38 @@ function Header({trigger, setTrigger}) {
             try {
                 const response = await contract.withdraw();
                 setWithdrawLoading(true);
-                setDisplayPopup(true);
                 console.log('response: ', response);  
-
+                // fetch data
                 const txHash = response.hash;
                 const txData = await provider.waitForTransaction(txHash).then(provider.getTransactionReceipt(txHash));
                 console.log("txData: ", txData);
-
+                // retrieve tokenId and contractAddress
                 const logs = txData.logs[1];
                 const _tokenId = parseInt(logs.topics[3]);
                 const _contractAddress = logs.address;
                 console.log(_tokenId);
                 console.log(_contractAddress);
-
+                // update nft state
                 setRandomNft([_tokenId, _contractAddress]);
                 setWithdrawLoading(false);
+                // trigger displayRandomNft popup
+                setDisplayPopup(true);
                 console.log(randomNft);
-                setRandomNft([]);
             } catch(err) {
                 console.log('error: ', err);
+                setWithdrawError(true);
+                return (<Popup trigger={withdrawError} setTrigger={setWithdrawError}><Error/></Popup>) 
             }
         } 
     }
 
      // Get random Nft
      const displayRandomNft = () => {
-       if(withdrawLoading == true) {
-           return (<Popup trigger={withdrawLoading}><Loading/></Popup>)
-       } else return (<Popup trigger={displayPopup} setTrigger={setDisplayPopup}>
-           <RandomNft></RandomNft>
-       </Popup>)
+        if(withdrawLoading == true) {
+            return (<Popup trigger={withdrawLoading} setTrigger={setWithdrawLoading}><Loading color={color}/></Popup>) 
+        } else return (<Popup trigger={displayPopup} setTrigger={setDisplayPopup}>
+                        <RandomNft nft = {randomNft}/>
+                        </Popup>) 
     }
 
     return ( 

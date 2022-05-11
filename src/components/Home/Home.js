@@ -74,10 +74,7 @@ function Home() {
         connButtonText = {connButtonText}
         connectWallet = {connectWallet}
       />
-      <Header 
-        defaultAccount = {defaultAccount}
-        setDefaultAccount = {setDefaultAccount}
-      />
+      <Header/>
       <UsersCollection
         defaultAccount = {defaultAccount}
         isLoggedIn = {isLoggedIn}
