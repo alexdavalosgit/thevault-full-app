@@ -14,6 +14,7 @@ function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [connButtonText, setConnButtonText] = useState('Connect Wallet');
 
+
   // Main connection handler
   const connectWallet = async () => {
     // Make sure user installed Metamask
@@ -73,10 +74,7 @@ function Home() {
         connButtonText = {connButtonText}
         connectWallet = {connectWallet}
       />
-      <Header 
-        defaultAccount = {defaultAccount}
-        setDefaultAccount = {setDefaultAccount}
-      />
+      <Header/>
       <UsersCollection
         defaultAccount = {defaultAccount}
         isLoggedIn = {isLoggedIn}
