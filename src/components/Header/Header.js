@@ -3,7 +3,7 @@ import { ethers, BigNumber } from 'ethers';
 import { Link } from 'react-router-dom';
 import theVault from '../../artifacts/contracts/TheVault.sol/TheVault.json';
 import nftContract from '../../artifacts/@openzeppelin/contracts/token/ERC721/ERC721.sol/ERC721.json';
-import TopCollections from "../TopCollections/TopCollections";
+import TotalCollection from "../TotalCollection/TotalCollection";
 import HeaderInfo from "./HeaderInfo";
 import Loading from "../Loading/Loading";
 import './Header.css'
@@ -183,7 +183,7 @@ function Header({}) {
                    
                     </div>
                 </div>
-                <TopCollections />
+                <TotalCollection />
                 <Link to="/vault-collection">View All</Link> 
                 {displayRandomNft()}
             </div>

@@ -47,6 +47,9 @@ contract TheVault {
         return randNumber;
     }
 
+    // get balance of
+    function balanceOf(address _owner) external view returns (uint256) {}
+
     // Remove assets from array
     function removeAssetFromArray(uint256 _index) internal {
         require(_index < mainVault.length, "Not enough NFTs available.");
@@ -86,5 +89,4 @@ contract TheVault {
         removeAssetFromArray(rand);
         return randomNft.tokenId;
     }
-   
 }
