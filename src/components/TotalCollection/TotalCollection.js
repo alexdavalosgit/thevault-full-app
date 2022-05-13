@@ -7,7 +7,7 @@ function TotalCollection() {
     const [isLoading, setIsLoading] = useState(true);
     const [balance, setBalance] = useState();
 
-    const theVaultAddress = "0x8181236bf43Cb09C34048f11510B943921EfE601";
+    const theVaultAddress = "0x23256e659563dE6dB1E9D73e2E1a94DF922919BD";
    
      // Get Vault NFTS
      async function getBalanceOf() {
@@ -16,8 +16,9 @@ function TotalCollection() {
         const contract = new ethers.Contract(theVaultAddress, theVault.abi, signer);
 
         try {
-            const response = await contract.balanceOf(theVaultAddress)
-            console.log(response);
+            const response = await contract.getArrayElements();
+            const _balance = response.length;
+            setBalance(_balance);
             
         } catch(err) {
             console.log('error: ', err);
@@ -32,7 +33,7 @@ function TotalCollection() {
 
     return (
         <div>
-           <h1>The Vault Balance:</h1>    
+           <h1>The Vault Balance: {balance} </h1>    
         </div>
     )
 }

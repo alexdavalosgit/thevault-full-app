@@ -9,7 +9,7 @@ function VaultCollection() {
     const [isLoading, setIsLoading] = useState(true);
     const [vaultNfts, setVaultNfts] = useState([]);
 
-    const theVaultAddress = "0x8181236bf43Cb09C34048f11510B943921EfE601";
+    const theVaultAddress = "0x23256e659563dE6dB1E9D73e2E1a94DF922919BD";
    
      // Get Vault NFTS
      async function getArrayNfts() {
