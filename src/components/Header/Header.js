@@ -19,6 +19,8 @@ function Header({}) {
     const [vault, setVault] = useState([]);
     const [depositStatus, setDepositStatus] = useState(false);
     const [randomNft, setRandomNft] = useState([]);
+    const [randomNftContract, setRandomNftContract] = useState("");
+    const [randomNftTokenId, setRandomNftTokenId] = useState(0);
     const [withdrawLoading, setWithdrawLoading] = useState(false);
     const [displayPopup, setDisplayPopup] = useState(false);
     const [withdrawError, setWithdrawError] = useState(false);
@@ -116,27 +118,41 @@ function Header({}) {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
             const contract = new ethers.Contract(theVaultAddress, theVault.abi, signer);
-
+            const contractNft = new ethers.Contract("0x0e08F8E126BEfD4cB9B21cF99C92AB68b503eD3E", nftContract.abi, signer);
+        
             try {
                 const response = await contract.withdraw();
                 setWithdrawLoading(true);
                 console.log('response: ', response);  
+
                 // fetch data
                 const txHash = response.hash;
                 const txData = await provider.waitForTransaction(txHash).then(provider.getTransactionReceipt(txHash));
                 console.log("txData: ", txData);
+
                 // retrieve tokenId and contractAddress
                 const logs = txData.logs[1];
                 const _tokenId = parseInt(logs.topics[3]);
                 const _contractAddress = logs.address;
                 console.log(_tokenId);
                 console.log(_contractAddress);
+                // setRandomNftContract(_contractAddress);
+
                 // update nft state
                 setRandomNft([_tokenId, _contractAddress]);
+                setRandomNftContract(_contractAddress);
+                setRandomNftTokenId(_tokenId);
                 setWithdrawLoading(false);
+
+                // call tokenURI 
+                const tokenUri = await contractNft.tokenURI(randomNftTokenId);
+                console.log('tokenuri under this');
+                console.log(tokenUri);
+
                 // trigger displayRandomNft popup
                 setDisplayPopup(true);
                 console.log(randomNft);
+
             } catch(err) {
                 console.log('error: ', err);
                 setWithdrawError(true);

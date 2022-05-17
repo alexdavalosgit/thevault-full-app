@@ -1,8 +1,7 @@
 .main-container {
-    border: 2px solid tomato;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-   
+  border: 2px solid tomato;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }

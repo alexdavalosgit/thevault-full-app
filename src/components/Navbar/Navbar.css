@@ -1,0 +1,12 @@
+.navbar-container {
+  border: 2px solid tomato;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.social-media {
+  border: 2px solid tomato;
+  display: flex;
+  justify-content: space-between;
+}
