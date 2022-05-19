@@ -1,16 +1,13 @@
 import React, { useState } from "react";
+import '../Navbar/Navbar.css';
 
-const AuthButton = ({ defaultAccount, isLoggedIn, connButtonText, connectWallet, setErrorMessage, errorMessage}) => {
+const AuthButton = ({ defaultAccount, isLoggedIn, connButtonText, connectWallet}) => {
   
 
     return (
-      <>
+      <div className='auth-container'>
           <button onClick={connectWallet}>{connButtonText}</button>
-          <br/>
-          <h5>Address connected: {defaultAccount} </h5>
-          <h5>Logged In : {isLoggedIn ? "true" : "false"}</h5>
-        
-      </>
+      </div>
     );
 };
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ethers, BigNumber } from 'ethers';
 import "../VaultCollection/VaultCollection.css"
 import theVault from '../../artifacts/contracts/TheVault.sol/TheVault.json';
+import "../Header/Header.css";
 
 function TotalCollection() {
     const [isLoading, setIsLoading] = useState(true);
@@ -32,8 +33,9 @@ function TotalCollection() {
     }, []);
 
     return (
-        <div>
-           <h1>The Vault Balance: {balance} </h1>    
+        <div className="info-right-text">
+           <h1> {balance} </h1>
+           <p>NFTs in the vault :)</p>    
         </div>
     )
 }

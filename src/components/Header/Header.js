@@ -173,7 +173,7 @@ function Header({}) {
     return ( 
         <>
             <div className="main-container">
-                <div>
+                <div className="info-left">
                     <HeaderInfo />
                     <button onClick={handleWithdraw}>Roll</button> 
                     <div>
@@ -199,8 +199,10 @@ function Header({}) {
                    
                     </div>
                 </div>
-                <TotalCollection />
-                <Link to="/vault-collection">View All</Link> 
+                <div className="info-right">
+                    <TotalCollection />
+                    <Link to="/vault-collection">View All</Link> 
+                </div>
                 {displayRandomNft()}
             </div>
                 

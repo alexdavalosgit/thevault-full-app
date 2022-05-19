@@ -1,7 +1,17 @@
 .main-container {
   border: 2px solid tomato;
-  padding: 5px;
+  margin: 0;
+  padding: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.info-right-text {
+  padding: 0px;
+}
+
+.info-right-text h1 {
+  font-size: 11rem;
+  margin: 0;
 }

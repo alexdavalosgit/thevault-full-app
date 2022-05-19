@@ -2,11 +2,36 @@
   border: 2px solid tomato;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin: 0;
+  padding: 2rem;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 1.5rem;
+  font-weight: bolder;
 }
 
 .social-media {
   border: 2px solid tomato;
-  display: flex;
-  justify-content: space-between;
+}
+
+.auth-container {
+  position: absolute;
+  right: 3rem;
+}
+
+.auth-container button {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  padding: 0.8rem;
+  border-radius: 10px;
+}
+
+.status-info {
+  border: 2px solid tomato;
 }
