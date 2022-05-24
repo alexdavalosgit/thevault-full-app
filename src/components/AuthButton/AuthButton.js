@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../Navbar/Navbar.css';
 
-const AuthButton = ({ defaultAccount, isLoggedIn, connButtonText, connectWallet}) => {
+const AuthButton = ({ connButtonText, connectWallet}) => {
   
 
     return (

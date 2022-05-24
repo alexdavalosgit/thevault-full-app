@@ -51,7 +51,7 @@ function Home() {
 
   // Connects address to site
   const connectHandler= () => {
-    setConnButtonText('Disconnect');
+    setConnButtonText('Connected');
     setIsLoggedIn(true);
   }
   // Disconnects address from site

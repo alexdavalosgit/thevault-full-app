@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AuthButton from "../AuthButton/AuthButton";
+import { Link } from 'react-router-dom';
 import '../../App.css';
 import '../Navbar/Navbar.css'
 
@@ -11,6 +12,7 @@ function Navbar({ defaultAccount, isLoggedIn, connButtonText, connectWallet, set
         <div className='navbar-container'>
             <h3 className="logo">THE VAULT</h3>
             {/* Left Side - Social Media Icons */}
+            <Link to="/vault-collection">View Collection</Link> 
             <div className="social-media">
                 <a href='https://twitter.com'>Twitter</a> |
                 <a href='https://telegram.com'>Telegram</a>
