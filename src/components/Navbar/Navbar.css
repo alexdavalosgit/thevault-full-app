@@ -14,13 +14,18 @@
   font-weight: bolder;
 }
 
-.social-media {
-  border: 2px solid tomato;
+.link {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .auth-container {
   position: absolute;
-  right: 3rem;
+  right: 1rem;
 }
 
 .auth-container button {
@@ -34,11 +39,31 @@
 
 .auth-container button:hover {
   color: rgba(255, 255, 255);
-  filter: drop-shadow(rgba(0, 0, 0, 0.25)
-    0px 0px 10px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 0px 10px);
   text-decoration: none;
 }
 
 .status-info {
   border: 2px solid tomato;
+}
+
+.social-media {
+  /*border: 2px solid tomato;*/
+  border: 2px solid blue;
+  position: absolute;
+  height: 100%;
+  right: 10rem;
+}
+
+.social-media img {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: whitesmoke;
+}
+
+.link-element {
+  font-size: 1.2rem;
+  background-color: whitesmoke;
+  color: black;
+  text-decoration: none;
 }

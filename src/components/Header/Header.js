@@ -173,37 +173,35 @@ function Header({}) {
     return ( 
         <>
             <div className="main-container">
-                <div className='info-parent'>
-                    <div className="info-left">
-                        <HeaderInfo />
-                        <button className='button-main' onClick={handleWithdraw}>Purchase</button> 
-                        <div>
-                                <input 
-                                    type="text" 
-                                    required
-                                    value={nftTokenId}
-                                    onChange={(e) => setNftTokenId(e.target.value)}
-                                    placeholder='Enter Token Id' 
-                                />
-                                <input 
-                                    type="text"
-                                    required 
-                                    value={nftContractAddress}
-                                    onChange={(e) => setNftContractAddress(e.target.value)} 
-                                    placeholder='Enter Contract Address' />
-                                <button onClick={handleDeposit}>Deposit</button>
-                                <div>tokenId: {nftTokenId} contractAddress:{nftContractAddress} deposit status: {depositStatus}</div>
+                <div className="info-left">
+                    <HeaderInfo />
+                    <button className='button-main' onClick={handleWithdraw}>Purchase</button> 
+                    <div className="deposit">
+                            <input 
+                                type="text" 
+                                required
+                                value={nftTokenId}
+                                onChange={(e) => setNftTokenId(e.target.value)}
+                                placeholder='Enter Token Id' 
+                            />
+                            <input 
+                                type="text"
+                                required 
+                                value={nftContractAddress}
+                                onChange={(e) => setNftContractAddress(e.target.value)} 
+                                placeholder='Enter Contract Address' />
+                            <button onClick={handleDeposit}>Deposit</button>
+                            <div>tokenId: {nftTokenId} contractAddress:{nftContractAddress} deposit status: {depositStatus}</div>
 
-                                <button onClick={getArrayNfts}>show vault contents</button>
-                                <button onClick={() => console.log(randomNft)}>random nft</button>
-                                {displayRandomNft()}
-                    
-                        </div>
+                            <button onClick={getArrayNfts}>show vault contents</button>
+                            <button onClick={() => console.log(randomNft)}>random nft</button>
+                            {displayRandomNft()}
+                
                     </div>
-                    <div className="info-right">
-                        <TotalCollection />
-                        <Link to="/vault-collection">View All</Link> 
-                    </div>
+                </div>
+                <div className="info-right"> 
+                    <TotalCollection />
+                    <Link to="/vault-collection">View All</Link> 
                 </div>
                 {displayRandomNft()}
             </div>
