@@ -75,12 +75,13 @@ function Home() {
         connectWallet = {connectWallet}
       />
       <Header/>
+      <About/> 
       <UsersCollection
         defaultAccount = {defaultAccount}
         isLoggedIn = {isLoggedIn}
         nfts = {nfts}
       /> 
-      <About/> 
+    
       <Footer/>
     </div>
   );
