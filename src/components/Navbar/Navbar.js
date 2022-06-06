@@ -12,15 +12,15 @@ import telegram from '../../images/telegram.svg'
 function Navbar({ defaultAccount, isLoggedIn, connButtonText, connectWallet, setErrorMessage, errorMessage}) {
     return ( 
         <div className='navbar-container'>
-            <h3 className="logo">THE VAULT</h3> 
-            {/* Left Side - Social Media Icons */}
-            <div className="social-media">
+            <h3 className="logo">TheVault</h3> 
+            {/* Left Side - Links */}
+            <div className="link-container">
                 <Link to="/vault-collection" className="link-element">Collection</Link> 
-                <a href='https://twitter.com'> 
-                    <img src={twitter} alt="twitter"/> 
+                <a href='https://etherscan.io/' className="link-element">  
+                    Contract
                 </a> 
-                <a href='https://telegram.org'>
-                    <img src={telegram} alt="telegram"/> 
+                <a href='https://twitter.com' className="link-element">
+                    Socials
                 </a>
             </div>
             {/* Right Side - Sections and Connect */}

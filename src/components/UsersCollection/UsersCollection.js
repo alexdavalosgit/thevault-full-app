@@ -18,11 +18,15 @@ const UsersCollection = ({ defaultAccount, isLoggedIn, nfts }) => {
       <div className='collection-text'>
         <h3> MY NFTS</h3>
       </div>
-      <div className='collection'>
+     {/*  <div className='collection'>
           {nfts.map((nft, index) => {
             return <UsersCollectionCard nft={nft} key={index}/>
           })}
-        </div>
+      </div> */}
+      <div className='collection'>
+        <UsersCollectionCard/>
+      </div>
+   
     </>
    
   )

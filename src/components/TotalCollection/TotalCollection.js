@@ -13,8 +13,7 @@ function TotalCollection() {
      // Get Vault NFTS
      async function getBalanceOf() {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const contract = new ethers.Contract(theVaultAddress, theVault.abi, signer);
+        const contract = new ethers.Contract(theVaultAddress, theVault.abi, provider);
 
         try {
             const response = await contract.getArrayElements();
