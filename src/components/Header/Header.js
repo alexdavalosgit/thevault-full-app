@@ -175,33 +175,36 @@ function Header({}) {
             <div className="main-container">
                 <div className="info-left">
                     <HeaderInfo />
-                    <button className='button-main' onClick={handleWithdraw}>Purchase</button> 
                     <div className="deposit">
+
+                            <button onClick={handleDeposit} className="button-main">Deposit</button>
+                            {displayRandomNft()}
+                            <div className="input-container">
                             <input 
+                               
                                 type="text" 
                                 required
                                 value={nftTokenId}
                                 onChange={(e) => setNftTokenId(e.target.value)}
                                 placeholder='Enter Token Id' 
                             />
+                             <br/>
                             <input 
+                               
                                 type="text"
                                 required 
                                 value={nftContractAddress}
                                 onChange={(e) => setNftContractAddress(e.target.value)} 
                                 placeholder='Enter Contract Address' />
-                            <button onClick={handleDeposit}>Deposit</button>
-                            <div>tokenId: {nftTokenId} contractAddress:{nftContractAddress} deposit status: {depositStatus}</div>
-
-                            <button onClick={getArrayNfts}>show vault contents</button>
-                            <button onClick={() => console.log(randomNft)}>random nft</button>
-                            {displayRandomNft()}
-                
+                            </div>
+                         
                     </div>
                 </div>
                 <div className="info-right"> 
                     <TotalCollection />
                     <Link to="/vault-collection">View All</Link> 
+                    <br/>
+                    <button className="button-main" onClick={handleWithdraw}>Purchase</button> 
                 </div>
                 {displayRandomNft()}
             </div>

@@ -34,7 +34,7 @@ function TotalCollection() {
     return (
         <div className="info-right-text">
            <h1> {balance} </h1>
-           <p>NFTs in the vault :)</p>    
+           <p>nfts in the vault.</p> 
         </div>
     )
 }
