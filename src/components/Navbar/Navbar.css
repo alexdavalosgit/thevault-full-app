@@ -52,27 +52,10 @@
   border: 2px solid tomato;
 }
 
-.social-media {
-  /*border: 2px solid tomato;*/
-  border: 2px solid blue;
-  position: absolute;
-  height: auto;
-  right: 11rem;
-  display: flex;
-  justify-content: center;
-}
-
 .link-container {
   position: absolute;
   height: auto;
   right: 15.5rem;
-}
-
-.social-media img {
-  width: 1.2rem;
-  height: 1.2rem;
-  height: 100%;
-  background-color: whitesmoke;
 }
 
 .link-element {

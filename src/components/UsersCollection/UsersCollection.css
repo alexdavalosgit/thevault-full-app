@@ -1,46 +1,71 @@
-.collection {
-  border: 2px solid tomato;
-  margin: 0 auto;
-  padding: 2rem;
+.collection-container {
+  /* border: 2px solid tomato; */
+  margin: -6% 9% 8% 6%;
+  /* padding: 2rem; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
-  background-color: #1f1f1f;
+  /* background-color: #1f1f1f; */
   height: 450px;
   max-width: 1201px;
   border-radius: 2%;
+  overflow: auto;
 }
 
-.collection-info {
-  border: 2px solid white;
+.card {
+  /* border: 2px solid blue; */
   background-color: white;
-  max-width: 25%;
-  margin: 0 auto;
-  padding: 0;
-  height: 350px;
+  width: 240px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 18px;
 }
 
-.collection-img-container {
-  height: 80%;
+.card-img {
+  height: 75%;
+  width: 240px;
 }
 
-.collection-img-container img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
 }
 
 .collection-img-text {
   margin: 0;
   color: black;
+  font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
   text-align: left;
   font-size: 10px;
-  height: 20%;
+  height: 25%;
   border-left: 1px solid rgb(194, 201, 209);
   border-right: 1px solid rgb(194, 201, 209);
   border-bottom: 1px solid rgb(194, 201, 209);
+  border-radius: 0px 0px 14px 14px;
 }
 
 .collection-img-text p {
-  border: 1px solid green;
+  margin: 0;
+  /* border: 1px solid green; */
+  overflow-wrap: break-word;
+  height: 40%;
+}
+
+.collection-img-text h3 {
+  margin: 0;
+  font-size: 14px;
+  /* align-content: center; */
+  text-align: center;
+  padding-top: 20px;
+  font-weight: 400;
+  overflow-wrap: break-word;
+}
+
+.collection-text {
+  font-family: "Eksell Display Large";
+  margin-left: 7%;
+  margin-top: 11%;
+  text-align: left;
 }

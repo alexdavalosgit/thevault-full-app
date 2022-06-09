@@ -35,17 +35,22 @@ function Home() {
 
   const getNftData = async () => {
     // Cancel function if no address connected
-    if(!defaultAccount) return
+    /* if(!defaultAccount) return */
     // Get NFT Data from Account
-    const response = await fetch(`https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:0x60f80121c31a0d46b5279700f9df786054aa5ee5`);
+    const response = await fetch(`https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:0xed5af388653567af2f388e6224dc7c4b3241c544`);
+    console.log('after fetch');
     const data = await response.json();
+    console.log('awaiting..');
     setNfts(data.items);
+    console.log('set data for nfts');
     console.log(data);
+    console.log('end of getnftdata');
   
   }
 
   useEffect(() => {
     getNftData();
+    console.log('useEffect ran properly');
   }, []);
 
 
@@ -81,7 +86,6 @@ function Home() {
         isLoggedIn = {isLoggedIn}
         nfts = {nfts}
       /> 
-    
       <Footer/>
     </div>
   );
