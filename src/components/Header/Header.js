@@ -21,8 +21,10 @@ function Header({}) {
     const [randomNft, setRandomNft] = useState([]);
     const [randomNftContract, setRandomNftContract] = useState("");
     const [randomNftTokenId, setRandomNftTokenId] = useState(0);
+    const [randomNftName, setRandomNftName] = useState('');
+    const [randomNftImage, setRandomNftImage] = useState('');
     const [withdrawLoading, setWithdrawLoading] = useState(false);
-    const [displayPopup, setDisplayPopup] = useState(false);
+    const [displayPopup, setDisplayPopup] = useState(true);
     const [withdrawError, setWithdrawError] = useState(false);
     const [color, setColor] = useState('#50E3C2');
    
@@ -146,8 +148,13 @@ function Header({}) {
 
                 // call tokenURI 
                 const tokenUri = await contractNft.tokenURI(randomNftTokenId);
-                console.log('tokenuri under this');
-                console.log(tokenUri);
+                console.log('tokenuri under this: ', tokenUri);
+                setRandomNftImage(tokenUri.image);
+                
+
+                // call name
+                const name = await contractNft.name();
+                setRandomNftName(name);
 
                 // trigger displayRandomNft popup
                 setDisplayPopup(true);
@@ -166,7 +173,7 @@ function Header({}) {
         if(withdrawLoading == true) {
             return (<Popup trigger={withdrawLoading} setTrigger={setWithdrawLoading}><Loading color={color}/></Popup>) 
         } else return (<Popup trigger={displayPopup} setTrigger={setDisplayPopup}>
-                        <RandomNft nft = {randomNft}/>
+                        <RandomNft nft = {randomNft} image = {randomNftImage} name = {randomNftName} />
                         </Popup>) 
     }
 

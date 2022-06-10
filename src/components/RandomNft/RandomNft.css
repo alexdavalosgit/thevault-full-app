@@ -1,0 +1,7 @@
+.image-error {
+  /* background-color: turquoise; */
+  border: 2px solid black;
+  padding: 25px;
+  border-radius: 12px;
+  font-size: 18px;
+}

@@ -5,7 +5,6 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 contract FakeNFT is ERC721URIStorage {
     constructor() ERC721("coolcats", "cat") {
-        _baseURI();
         _safeMint(msg.sender, 0);
         _setTokenURI(0, "https://api.coolcatsnft.com/cat/0");
         _safeMint(msg.sender, 1);
