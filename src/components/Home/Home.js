@@ -12,7 +12,7 @@ function Home() {
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [connButtonText, setConnButtonText] = useState('Connect Wallet');
+  const [connButtonText, setConnButtonText] = useState('Connect');
 
 
   // Main connection handler
@@ -35,7 +35,7 @@ function Home() {
 
   const getNftData = async () => {
     // Cancel function if no address connected
-    /* if(!defaultAccount) return */
+    if(!defaultAccount) return
     // Get NFT Data from Account
     const response = await fetch(`https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:0xed5af388653567af2f388e6224dc7c4b3241c544`);
     console.log('after fetch');
@@ -45,13 +45,15 @@ function Home() {
     console.log('set data for nfts');
     console.log(data);
     console.log('end of getnftdata');
+    console.log(defaultAccount)
   
   }
 
+  // Controls wallet nft display on defaultAccount updates
   useEffect(() => {
     getNftData();
     console.log('useEffect ran properly');
-  }, []);
+  }, [defaultAccount]);
 
 
   // Connects address to site
@@ -61,7 +63,7 @@ function Home() {
   }
   // Disconnects address from site
   const disconnectHandler = () => {
-    setConnButtonText('Connect Wallet');
+    setConnButtonText('Connect');
     setIsLoggedIn(false);
   }
   // Handles account change
@@ -81,11 +83,11 @@ function Home() {
       />
       <Header/>
       <About/> 
-      <UsersCollection
+      { nfts ? <UsersCollection
         defaultAccount = {defaultAccount}
         isLoggedIn = {isLoggedIn}
         nfts = {nfts}
-      /> 
+      /> : <h1>Connect wallet to view your nfts.</h1>}
       <Footer/>
     </div>
   );
