@@ -1,3 +1,5 @@
 .container {
   text-align: center;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
 }

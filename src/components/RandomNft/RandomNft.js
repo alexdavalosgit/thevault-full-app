@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import '../RandomNft/RandomNft.css'
 
-
-const RandomNft = ({nft}) => {
+const RandomNft = ({nft, image, name}) => {
   
   return (
     <article className='review'>
       <h4 className='job'>You have received:</h4> 
-      <br/>
       <div className='img-container'>
-          <img 
-              src='https://lh3.googleusercontent.com/Tb9qXcO07HjoBbXA2CmsOVTO46m4eTI5EHlb3sSBvmtpTbVXg2MvKefsxSApVIWrojkqXPHhrRX7UMpbeL7sgGKPkwUpp6asplx7dio=s0'
-              alt='BORED APE #1166'
-              className='person-img'
-          />
+        {image ? <img 
+              src="https://ipfs.io/ipfs/QmYrxAviWHGugdikgU1Awc8MRtfqxMYYRmBuCTMEc5mCAx"
+              alt='random nft'
+              className='person-img' /> : <p className='image-error'>error: could not retrieve image</p>}
       </div>
-      <h4 className='author'>#{nft[0]} - CA: {nft[1]}</h4>
+      <h4 className='author'>#{nft[0]} - name: {name}</h4>
   </article>
   )
 };

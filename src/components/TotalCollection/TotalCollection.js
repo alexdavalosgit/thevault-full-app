@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ethers, BigNumber } from 'ethers';
 import "../VaultCollection/VaultCollection.css"
 import theVault from '../../artifacts/contracts/TheVault.sol/TheVault.json';
+import "../Header/Header.css";
 
 function TotalCollection() {
     const [isLoading, setIsLoading] = useState(true);
@@ -12,8 +13,7 @@ function TotalCollection() {
      // Get Vault NFTS
      async function getBalanceOf() {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const contract = new ethers.Contract(theVaultAddress, theVault.abi, signer);
+        const contract = new ethers.Contract(theVaultAddress, theVault.abi, provider);
 
         try {
             const response = await contract.getArrayElements();
@@ -32,8 +32,9 @@ function TotalCollection() {
     }, []);
 
     return (
-        <div>
-           <h1>The Vault Balance: {balance} </h1>    
+        <div className="info-right-text">
+           <h1> {balance} </h1>
+           <p>nfts in the vault.</p> 
         </div>
     )
 }

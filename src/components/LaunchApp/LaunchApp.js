@@ -5,7 +5,7 @@ import './LaunchApp.css'
 const LaunchApp = () => {
     let navigate = useNavigate();
     return(
-        <div className="first-visit">
+        <div className="launch-app">
             <button onClick={() => {
                 navigate('/home');
             }}

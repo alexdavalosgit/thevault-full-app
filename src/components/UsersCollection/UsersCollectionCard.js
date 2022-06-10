@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import './UsersCollection.css';
 
+
 const UsersCollectionCard = ({ nft }) => {
 
     return (
-        <div className='collection-info'>
-          <div className='img-container'>
-            <img src={nft.meta.content[1].url} />
-          </div>  
-          <h3>{nft.meta.name} : #{nft.tokenId}</h3>
+        <div className='card'>
+            <div className='card-img'>
+              <img src={nft.meta.content[0].url} />
+              {/* <img src={nftpic} alt="nft image"/> */}
+            </div>
+            <div className='collection-img-text'>
+                <h3>Name: {nft.meta.name} </h3>
+                
+                {/* <h3>#100</h3>
+                <p>address: 0xsdsonfdjksfnlw-1932</p> */}
+            </div>  
         </div>
+        
         
       );
 }

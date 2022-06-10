@@ -1,12 +1,18 @@
+import "../Header/Header.css"
+
 function HeaderInfo() {
     return ( 
         <>
-            <h2>Roll one, Give one</h2> <br/>
-            <p>The Vault is based on the Ethereum blockchain and includes over 10,000 NFTs.
-            Take your chance at rolling a random NFT from The Vault. 
-            </p>
+            <h2 className="title">From the Vault <br/> to your wallet</h2> 
             <br/>
-            <p>Deposit NFTs into The Vault to earn our VAULT token. The more VAULT you have the higher your governing power is within our DAO.</p>
+            <p className="text">
+                TheVault is a community owned NFT collection. <br/>
+                A collection on the blockchain that we build together. <br/>
+                A decentralized protocol by the community, for the community. <br/> 
+                <br/>
+                Deposit an nft to the community vault to earn governance token. Purchase a random nft from our collection to support the vault.
+                Fees will be invested back into our protocol and users.
+            </p>
         </>
      );
 }

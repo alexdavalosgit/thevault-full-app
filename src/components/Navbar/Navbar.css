@@ -1,0 +1,74 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0.5em 6em;
+  position: relative;
+}
+
+.logo {
+  font-family: "Eksell Display Large";
+  letter-spacing: 0.1rem;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.link {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/* .auth-container {
+  position: absolute;
+  right: 0;
+} */
+
+.auth-container button {
+  border-radius: 6px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  /* letter-spacing: 0.03em; */
+  font-family: "Roboto Flex", sans-serif;
+  border: none;
+  /* margin-top: 56px; */
+  text-decoration: none;
+}
+
+.auth-container button:hover {
+  color: rgba(255, 255, 255);
+  filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 0px 10px);
+  text-decoration: none;
+}
+
+.status-info {
+  border: 2px solid tomato;
+}
+
+.link-container {
+  position: absolute;
+  height: auto;
+  right: 15.5rem;
+}
+
+.link-element {
+  font-size: 17px;
+  font-family: "Founders Grotesk Regular";
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  margin-right: 1.2em;
+}
+
+.link-element:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}

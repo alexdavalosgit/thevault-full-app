@@ -19,8 +19,12 @@ function Header({}) {
     const [vault, setVault] = useState([]);
     const [depositStatus, setDepositStatus] = useState(false);
     const [randomNft, setRandomNft] = useState([]);
+    const [randomNftContract, setRandomNftContract] = useState("");
+    const [randomNftTokenId, setRandomNftTokenId] = useState(0);
+    const [randomNftName, setRandomNftName] = useState('');
+    const [randomNftImage, setRandomNftImage] = useState('');
     const [withdrawLoading, setWithdrawLoading] = useState(false);
-    const [displayPopup, setDisplayPopup] = useState(false);
+    const [displayPopup, setDisplayPopup] = useState(true);
     const [withdrawError, setWithdrawError] = useState(false);
     const [color, setColor] = useState('#50E3C2');
    
@@ -116,27 +120,46 @@ function Header({}) {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
             const contract = new ethers.Contract(theVaultAddress, theVault.abi, signer);
-
+            const contractNft = new ethers.Contract("0x0e08F8E126BEfD4cB9B21cF99C92AB68b503eD3E", nftContract.abi, signer);
+        
             try {
                 const response = await contract.withdraw();
                 setWithdrawLoading(true);
                 console.log('response: ', response);  
+
                 // fetch data
                 const txHash = response.hash;
                 const txData = await provider.waitForTransaction(txHash).then(provider.getTransactionReceipt(txHash));
                 console.log("txData: ", txData);
+
                 // retrieve tokenId and contractAddress
                 const logs = txData.logs[1];
                 const _tokenId = parseInt(logs.topics[3]);
                 const _contractAddress = logs.address;
                 console.log(_tokenId);
                 console.log(_contractAddress);
+                // setRandomNftContract(_contractAddress);
+
                 // update nft state
                 setRandomNft([_tokenId, _contractAddress]);
+                setRandomNftContract(_contractAddress);
+                setRandomNftTokenId(_tokenId);
                 setWithdrawLoading(false);
+
+                // call tokenURI 
+                const tokenUri = await contractNft.tokenURI(randomNftTokenId);
+                console.log('tokenuri under this: ', tokenUri);
+                setRandomNftImage(tokenUri.image);
+                
+
+                // call name
+                const name = await contractNft.name();
+                setRandomNftName(name);
+
                 // trigger displayRandomNft popup
                 setDisplayPopup(true);
                 console.log(randomNft);
+
             } catch(err) {
                 console.log('error: ', err);
                 setWithdrawError(true);
@@ -150,41 +173,46 @@ function Header({}) {
         if(withdrawLoading == true) {
             return (<Popup trigger={withdrawLoading} setTrigger={setWithdrawLoading}><Loading color={color}/></Popup>) 
         } else return (<Popup trigger={displayPopup} setTrigger={setDisplayPopup}>
-                        <RandomNft nft = {randomNft}/>
+                        <RandomNft nft = {randomNft} image = {randomNftImage} name = {randomNftName} />
                         </Popup>) 
     }
 
     return ( 
         <>
             <div className="main-container">
-                <div>
+                <div className="info-left">
                     <HeaderInfo />
-                    <button onClick={handleWithdraw}>Roll</button> 
-                    <div>
+                    <div className="deposit">
+
+                            <button onClick={handleDeposit} className="button-main">Deposit</button>
+                            {displayRandomNft()}
+                            <div className="input-container">
                             <input 
+                               
                                 type="text" 
                                 required
                                 value={nftTokenId}
                                 onChange={(e) => setNftTokenId(e.target.value)}
                                 placeholder='Enter Token Id' 
                             />
+                             <br/>
                             <input 
+                               
                                 type="text"
                                 required 
                                 value={nftContractAddress}
                                 onChange={(e) => setNftContractAddress(e.target.value)} 
                                 placeholder='Enter Contract Address' />
-                            <button onClick={handleDeposit}>Deposit</button>
-                            <div>tokenId: {nftTokenId} contractAddress:{nftContractAddress} deposit status: {depositStatus}</div>
-
-                            <button onClick={getArrayNfts}>show vault contents</button>
-                            <button onClick={() => console.log(randomNft)}>random nft</button>
-                            {displayRandomNft()}
-                   
+                            </div>
+                         
                     </div>
                 </div>
-                <TotalCollection />
-                <Link to="/vault-collection">View All</Link> 
+                <div className="info-right"> 
+                    <TotalCollection />
+                    <Link to="/vault-collection">View All</Link> 
+                    <br/>
+                    <button className="button-main" onClick={handleWithdraw}>Purchase</button> 
+                </div>
                 {displayRandomNft()}
             </div>
                 
