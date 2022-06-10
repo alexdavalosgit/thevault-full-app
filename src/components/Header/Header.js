@@ -24,7 +24,7 @@ function Header({}) {
     const [randomNftName, setRandomNftName] = useState('');
     const [randomNftImage, setRandomNftImage] = useState('');
     const [withdrawLoading, setWithdrawLoading] = useState(false);
-    const [displayPopup, setDisplayPopup] = useState(true);
+    const [displayPopup, setDisplayPopup] = useState(false);
     const [withdrawError, setWithdrawError] = useState(false);
     const [color, setColor] = useState('#50E3C2');
    
