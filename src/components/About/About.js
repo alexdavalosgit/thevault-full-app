@@ -3,7 +3,7 @@ import '../About/About.css'
 function About() {
     return ( 
         
-        <div className="about-container">
+        <div className="about-container margin-ignore">
                 <div className='about-item'>
                     <h3>Reach a new audience</h3>
                     <p>A creative way to gain exposure for your latest project.

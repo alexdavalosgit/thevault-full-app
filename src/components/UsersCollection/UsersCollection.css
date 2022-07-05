@@ -1,15 +1,16 @@
 .collection-container {
-  /* border: 2px solid tomato; */
-  margin: -6% 9% 8% 6%;
-  /* padding: 2rem; */
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  /* background-color: #1f1f1f; */
-  height: 450px;
-  max-width: 1201px;
-  border-radius: 2%;
-  overflow: auto;
+      /* border: 2px solid tomato; */
+    /* margin: -6% 9% 8% 6%; */
+    /* padding: 2rem; */
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    /* background-color: #1f1f1f; */
+    height: 450px;
+    max-width: 1201px;
+    border-radius: 2%;
+    overflow: auto;
+    margin: AUTO;
 }
 
 .card {

@@ -1,15 +1,15 @@
 .footer {
   /* border: 2px solid tomato; */
-  border: 2px solid blue;
   font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
   /* position: absolute; */
-  height: 22vh;
+  height: 12vh;
   /* right: 11rem; */
   display: flex;
   justify-content: space-evenly;
   color: white;
   background-color: black;
   align-items: center;
+  padding: 2rem;
 }
 
 .footer img {
