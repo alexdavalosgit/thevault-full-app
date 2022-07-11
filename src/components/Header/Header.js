@@ -184,8 +184,8 @@ function Header({}) {
                     <HeaderInfo />
                     <div className="deposit">
 
-                            <button onClick={handleDeposit} className="button-main">Deposit</button>
-                            {displayRandomNft()}
+                            
+                            
                             <div className="input-container">
                             <input 
                                
@@ -204,6 +204,8 @@ function Header({}) {
                                 onChange={(e) => setNftContractAddress(e.target.value)} 
                                 placeholder='Enter Contract Address' />
                             </div>
+
+                            <button onClick={handleDeposit} className="button-main">Deposit</button>
                          
                     </div>
                 </div>

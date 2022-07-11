@@ -10,7 +10,8 @@
     max-width: 1201px;
     border-radius: 2%;
     overflow: auto;
-    margin: AUTO;
+    margin: auto 15%;
+    margin-bottom: 8rem;
 }
 
 .card {
@@ -69,4 +70,6 @@
   margin-left: 7%;
   margin-top: 11%;
   text-align: left;
+  margin: auto 15%;
+  margin-top: 8rem;
 }

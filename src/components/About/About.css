@@ -7,6 +7,9 @@
   justify-content: center;
   font-size: 14px;
   min-height: 90%;
+  margin: auto;
+  max-width: 100%;
+
 }
 .about-item {
   text-align: left;

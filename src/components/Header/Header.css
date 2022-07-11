@@ -1,72 +1,62 @@
 .main-container {
          /* border: 2px solid tomato; */
-    margin: 3% 20% 10%;
+    margin: 3% 15% 10%;
     padding: 1rem;
     display: flex;
     /* border: solid red; */
     padding: 0;
     height: 45vh;
+    justify-content: space-evenly;
 }
 
 .info-left {
   border: 2px solid tomato;
-  width: 60%;
-  position: relative;
-  /* padding-left: 1rem; */
-  margin: 2% 0;
-  /* text-align: left; */
+  max-width: 55%;
+  margin: 4% auto;
+  
 }
 
 /* Header Info CSS */
 .title {
 /* border: 2px solid tomato; */
 text-align: left;
-font-size: 2.5rem;
-/* padding-bottom: 1.5rem; */
-/* padding-left: 1rem; */
-/* margin: 0; */
+font-size: 3.5rem;
 text-transform: uppercase;
 font-weight: 800;
-line-height: 2.5rem;
-max-width: 75%;
+line-height: 3.5rem;
 font-family: "Eksell Display Large";
-/* justify-content: center; */
 margin: auto;
+padding: 0 1rem;
 }
 
 .text {
   /* border: 2px solid tomato; */
   text-align: left;
-  /* margin: 0; */
   font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
   line-height: 1.5;
-  /* padding-left: 1rem; */
-  max-width: 75%;
   margin: auto;
-  padding: 1rem;
+  padding: 0 1rem;
+
 }
 
 .deposit {
     /* border: 2px solid tomato; */
-    padding: 1rem 0rem 1rem 5rem;
     display: flex;
     align-items: center;
-    /* width: 75%; */
-    margin-top: 1.5rem;
-}
-
-.input-container {
-width: 57%;
+    margin-top: 5rem;
+    justify-content: space-evenly;
 }
 
 .input-container input {
 padding: 2px;
 text-align: left;
-font-size: 9px;
-/* color: aquamarine; */
-width: 75%;
-/* line-height: inherit; */
-margin: 0;
+font-size: 11px;
+max-width: 100%;
+
+}
+
+.input-container {
+  max-width: 100%;
 }
 
 .info-right button {
@@ -75,12 +65,12 @@ margin-top: 2rem;
 
 .info-right {
   /* border: 2px solid tomato; */
-  width: 40%;
+  max-width: 40%;
   background-image: url("../../images/background.jpg");
   background-size: cover;
   border-radius: 0.5rem;
-  margin: 2%;
-  padding: 6rem 2rem 0rem 2rem;
+  margin: 4% auto;
+  padding: 5rem 2rem 0rem 2rem;
   align-items: center;
 }
 
