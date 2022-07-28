@@ -1,123 +1,123 @@
 .main-container {
-         /* border: 2px solid tomato; */
-    margin: 3% 15% 10%;
-    padding: 1rem;
-    display: flex;
-    /* border: solid red; */
-    padding: 0;
-    height: 45vh;
-    justify-content: space-evenly;
+  border: 2px solid tomato;
+  display: flex;
+  padding: 5% 10%;
+
+  min-height: 80vh;
+
+  max-width: 100%;
+  justify-content: center;
+  gap: 2%;
 }
 
+/* LEFT GRID SIDE */
+
 .info-left {
-  border: 2px solid tomato;
-  max-width: 55%;
-  margin: 4% auto;
-  
+  max-width: 60%;
+  max-height: 100%;
+  text-align: center;
+  overflow: auto;
+  padding: 0 4rem;
 }
 
 /* Header Info CSS */
 .title {
-/* border: 2px solid tomato; */
-text-align: left;
-font-size: 3.5rem;
-text-transform: uppercase;
-font-weight: 800;
-line-height: 3.5rem;
-font-family: "Eksell Display Large";
-margin: auto;
-padding: 0 1rem;
+  font-size: 8vh;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: "Eksell Display Large";
+  margin: 0;
 }
 
 .text {
   /* border: 2px solid tomato; */
-  text-align: left;
-  font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
   line-height: 1.5;
-  margin: auto;
-  padding: 0 1rem;
-
+  margin: 0;
+  padding: 0 4rem;
+  font-size: 3vh;
+  font-weight: 350;
 }
 
 .deposit {
-    /* border: 2px solid tomato; */
-    display: flex;
-    align-items: center;
-    margin-top: 5rem;
-    justify-content: space-evenly;
+  /* border: 2px solid tomato; */
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  justify-content: center;
+  padding: 0px 1rem;
 }
 
 .input-container input {
-padding: 2px;
-text-align: left;
-font-size: 11px;
-max-width: 100%;
-
+  padding: 2px;
+  text-align: center;
+  font-size: 1.2vw;
+  max-width: 100%;
 }
 
 .input-container {
   max-width: 100%;
 }
 
-.info-right button {
-margin-top: 2rem;
-}
+/* RIGHT GRID SIDE */
 
 .info-right {
-  /* border: 2px solid tomato; */
-  max-width: 40%;
-  background-image: url("../../images/background.jpg");
+  min-width: 40%;
+  background-image: url(http://localhost:3000/static/media/background.6b90f1828460720287dc.jpg);
   background-size: cover;
   border-radius: 0.5rem;
-  margin: 4% auto;
-  padding: 5rem 2rem 0rem 2rem;
+  max-height: 65vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  padding: 0rem;
+  overflow: auto;
+}
+
+.info-right button {
+  margin-top: 1rem;
 }
 
 .info-right a {
-color: black;
-font-style: oblique;
+  color: black;
+  font-style: oblique;
 }
 .info-right a:hover {
-color: whitesmoke;
+  color: whitesmoke;
 }
 
 .info-right-text {
-padding: 0px;
-font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
-/* line-height: 1.5; */
-display: flex;
-align-items: baseline;
-/* height: 80%; */
-justify-content: center;
+  font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
+  display: flex;
+  align-items: end;
+  border: solid;
+  min-height: 50%;
+  padding: 0;
 }
 
 .info-right-text h1 {
-font-size: 10rem;
-margin: 0;
+  font-size: 10rem;
+  margin: 0;
 }
 
 .info-right-text p {
-/* align-items: baseline; */
-margin-left: 0.5rem;
-font-weight: 500;
+  font-weight: 500;
 }
 
 .button-main {
-border-radius: 6px;
-text-transform: uppercase;
-color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
-padding: 16px 30px;
-font-size: 0.9rem;
-letter-spacing: 0.03em;
-font-family: "Roboto Flex", sans-serif;
-border: none;
-text-decoration: none;
+  border-radius: 6px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  padding: 16px 30px;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  font-family: "Roboto Flex", sans-serif;
+  border: none;
+  text-decoration: none;
 }
 
 .button-main:hover {
-color: rgba(255, 255, 255);
-filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 0px 40px);
-text-decoration: none;
+  color: rgba(255, 255, 255);
+  filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 0px 40px);
+  text-decoration: none;
 }
