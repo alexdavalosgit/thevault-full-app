@@ -22,16 +22,15 @@ function Navbar({ defaultAccount, isLoggedIn, connButtonText, connectWallet, set
                 <a href='https://twitter.com' className="link-element">
                     Socials
                 </a>
-            </div>
-            {/* Right Side - Sections and Connect */}
-
-            {/* Connect */}
+                {/* Connect */}
             <AuthButton
                 defaultAccount = {defaultAccount}
                 isLoggedIn = {isLoggedIn}
                 connButtonText = {connButtonText}
                 connectWallet = {connectWallet}
-            />      
+            />   
+            </div>
+               
         </div>
      
      );

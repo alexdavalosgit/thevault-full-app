@@ -1,50 +1,45 @@
 .main-container {
-  border: 2px solid tomato;
   display: flex;
-  padding: 5% 10%;
-
+  padding: 5% 15%;
   min-height: 80vh;
-
   max-width: 100%;
-  justify-content: center;
-  gap: 2%;
+  gap: 2rem;
 }
 
 /* LEFT GRID SIDE */
 
 .info-left {
-  max-width: 60%;
+  max-width: 100%;
   max-height: 100%;
-  text-align: center;
   overflow: auto;
-  padding: 0 4rem;
+  text-align: left;
 }
 
 /* Header Info CSS */
 .title {
-  font-size: 8vh;
+  font-size: 4.5vw;
   text-transform: uppercase;
   font-weight: 800;
   font-family: "Eksell Display Large";
   margin: 0;
+  padding: 0 4vw;
 }
 
 .text {
   /* border: 2px solid tomato; */
   line-height: 1.5;
   margin: 0;
-  padding: 0 4rem;
-  font-size: 3vh;
+  padding: 0 4vw;
+  font-size: 2vw;
   font-weight: 350;
 }
 
 .deposit {
-  /* border: 2px solid tomato; */
   display: flex;
   align-items: center;
-  margin-top: 2rem;
-  justify-content: center;
-  padding: 0px 1rem;
+  margin-top: 4vh;
+  justify-content: flex-start;
+  padding: 0px 4vw;
 }
 
 .input-container input {
@@ -56,6 +51,7 @@
 
 .input-container {
   max-width: 100%;
+  padding-right: 2rem;
 }
 
 /* RIGHT GRID SIDE */
@@ -65,12 +61,13 @@
   background-image: url(http://localhost:3000/static/media/background.6b90f1828460720287dc.jpg);
   background-size: cover;
   border-radius: 0.5rem;
-  max-height: 65vh;
+  max-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0rem;
-  overflow: auto;
+  overflow: hidden;
+  justify-content: center;
 }
 
 .info-right button {
@@ -79,7 +76,7 @@
 
 .info-right a {
   color: black;
-  font-style: oblique;
+  font-size: 1vw;
 }
 .info-right a:hover {
   color: whitesmoke;
@@ -89,18 +86,23 @@
   font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
   display: flex;
   align-items: end;
-  border: solid;
-  min-height: 50%;
   padding: 0;
+  min-width: 100%;
+  justify-content: center;
 }
 
 .info-right-text h1 {
-  font-size: 10rem;
+  font-size: 14vw;
   margin: 0;
 }
 
 .info-right-text p {
   font-weight: 500;
+  font-size: 1.5vw;
+}
+
+.info-right-links {
+  min-width: 100%;
 }
 
 .button-main {
@@ -108,8 +110,8 @@
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
-  padding: 16px 30px;
-  font-size: 0.9rem;
+  padding: 1.5rem 2.5rem;
+  font-size: 1vw;
   letter-spacing: 0.03em;
   font-family: "Roboto Flex", sans-serif;
   border: none;

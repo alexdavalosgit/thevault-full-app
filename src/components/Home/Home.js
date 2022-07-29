@@ -88,12 +88,13 @@ function Home() {
         <Header/>
       </section>
       <About/> 
-      { (nfts == []) ? <UsersCollection
-      defaultAccount = {defaultAccount}
-      isLoggedIn = {isLoggedIn}
-      nfts = {nfts}
-      />   : <Error/>}
-      
+      <section className="collection-section">
+        { (!nfts == []) ? <UsersCollection
+        defaultAccount = {defaultAccount}
+        isLoggedIn = {isLoggedIn}
+        nfts = {nfts}
+        />   : <Error/>}
+      </section>
       <Footer/>
     </div>
   );

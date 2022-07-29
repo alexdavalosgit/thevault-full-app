@@ -1,16 +1,15 @@
 .navbar-container {
-  display: grid;
-  align-items: center;
+  display: flex;
   justify-content: space-between;
-  padding: 0rem 10%;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-gap: 0rem;
+  padding: 0rem 5%;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 
 .logo {
   font-family: "Eksell Display Large";
   letter-spacing: 0.3rem;
-  font-size: 2.1vw;
+  font-size: 1.5vw;
   font-weight: 1000;
 }
 
@@ -32,7 +31,7 @@
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   font-size: 1vw;
   letter-spacing: 0.02em;
   font-family: "Roboto Flex", sans-serif;
@@ -51,7 +50,8 @@
 
 .link-container {
   max-width: 100%;
-  justify-self: end;
+  display: flex;
+  align-items: center;
 }
 
 .link-element {
@@ -62,7 +62,7 @@
   color: black;
   text-decoration: none;
   letter-spacing: 0.03em;
-  margin-right: 1.2em;
+  margin-right: 3vw;
 }
 
 .link-element:hover {

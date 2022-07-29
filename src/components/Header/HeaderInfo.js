@@ -6,8 +6,7 @@ function HeaderInfo() {
             <h2 className="title">Collect<br/> randomly</h2> 
             <br/>
             <p className="text">
-                Buy and sell NFTs through the #1 community owned digital art collection.
-                The Vault is collection on the blockchain that we build together. 
+                Buy random nft. Donate nft. Proceeds go to charity.
             </p>
         </>
      );
