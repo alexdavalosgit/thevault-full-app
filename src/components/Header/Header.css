@@ -1,104 +1,108 @@
 .main-container {
-  /* border: 2px solid tomato; */
-  margin: 2rem 3rem 7rem;
-  padding: 1rem;
   display: flex;
+  padding: 5% 15%;
+  min-height: 80vh;
+  max-width: 100%;
+  gap: 2rem;
 }
 
+/* LEFT GRID SIDE */
+
 .info-left {
-  /* border: 2px solid tomato; */
-  width: 50%;
-  position: relative;
-  padding-left: 1rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  text-align: left;
 }
 
 /* Header Info CSS */
 .title {
-  /* border: 2px solid tomato; */
-  text-align: left;
-  font-size: 2.5rem;
-  /* padding-bottom: 1.5rem; */
-  /* padding-left: 1rem; */
-  margin: 0;
+  font-size: 4.5vw;
   text-transform: uppercase;
   font-weight: 800;
-  line-height: 2.5rem;
-  max-width: 75%;
   font-family: "Eksell Display Large";
+  margin: 0;
+  padding: 0 4vw;
 }
 
 .text {
   /* border: 2px solid tomato; */
-  text-align: left;
-  margin: 0;
-  font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
   line-height: 1.5;
-  /* padding-left: 1rem; */
-  max-width: 85%;
+  margin: 0;
+  padding: 0 4vw;
+  font-size: 2vw;
+  font-weight: 350;
 }
 
 .deposit {
-  /* border: 2px solid tomato; */
-  padding: 0;
   display: flex;
   align-items: center;
-  width: 75%;
-  margin-top: 1.5rem;
-}
-
-.input-container {
-  width: 60%;
+  margin-top: 4vh;
+  justify-content: flex-start;
+  padding: 0px 4vw;
 }
 
 .input-container input {
   padding: 2px;
-  text-align: left;
-  font-size: 9px;
-  /* color: aquamarine; */
-  width: 75%;
-  /* line-height: inherit; */
-  margin: 0;
+  text-align: center;
+  font-size: 1.2vw;
+  max-width: 100%;
+}
+
+.input-container {
+  max-width: 100%;
+  padding-right: 2rem;
+}
+
+/* RIGHT GRID SIDE */
+
+.info-right {
+  min-width: 40%;
+  background-image: url(http://localhost:3000/static/media/background.6b90f1828460720287dc.jpg);
+  background-size: cover;
+  border-radius: 0.5rem;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0rem;
+  overflow: hidden;
+  justify-content: center;
 }
 
 .info-right button {
-  margin-top: 2rem;
-}
-
-.info-right {
-  /*border: 2px solid tomato; */
-  width: 40%;
-  background-image: url("../../images/background.jpg");
-  background-size: cover;
-  border-radius: 0.5rem;
+  margin-top: 1rem;
 }
 
 .info-right a {
   color: black;
-  font-style: oblique;
+  font-size: 1vw;
 }
 .info-right a:hover {
   color: whitesmoke;
 }
 
 .info-right-text {
-  padding: 0px;
   font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
-  /* line-height: 1.5; */
   display: flex;
-  align-items: baseline;
-  /* height: 80%; */
+  align-items: end;
+  padding: 0;
+  min-width: 100%;
   justify-content: center;
 }
 
 .info-right-text h1 {
-  font-size: 10rem;
+  font-size: 14vw;
   margin: 0;
 }
 
 .info-right-text p {
-  /* align-items: baseline; */
-  margin-left: 0.5rem;
   font-weight: 500;
+  font-size: 1.5vw;
+}
+
+.info-right-links {
+  min-width: 100%;
 }
 
 .button-main {
@@ -106,8 +110,8 @@
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
-  padding: 16px 30px;
-  font-size: 0.9rem;
+  padding: 1.5rem 2.5rem;
+  font-size: 1vw;
   letter-spacing: 0.03em;
   font-family: "Roboto Flex", sans-serif;
   border: none;

@@ -1,5 +1,18 @@
 .container {
+  margin: auto;
   text-align: center;
   font-family: "Roboto Flex", sans-serif;
   background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
+}
+
+body {
+  
+}
+
+.margin-ignore {
+  margin: 0 -22%;
+}
+
+@media (max-width: 1346px) {
+  
 }

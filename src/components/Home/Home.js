@@ -5,7 +5,10 @@ import Header from '../Header/Header';
 import UsersCollection from '../UsersCollection/UsersCollection';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
+import Error from "../Error/Error";
 import '../../App.css';
+import "../AuthButton/LoginPrompt"
+import LoginPrompt from '../AuthButton/LoginPrompt';
 
 function Home() {
   const [nfts, setNfts] = useState([]);
@@ -73,21 +76,25 @@ function Home() {
 
   return (
     <div className="container">
-      <Navbar
-        defaultAccount = {defaultAccount}
-        errorMessage = {errorMessage}
-        setErrorMessage = {setErrorMessage}
-        isLoggedIn = {isLoggedIn}
-        connButtonText = {connButtonText}
-        connectWallet = {connectWallet}
-      />
-      <Header/>
+      <section className="header">
+        <Navbar
+          defaultAccount = {defaultAccount}
+          errorMessage = {errorMessage}
+          setErrorMessage = {setErrorMessage}
+          isLoggedIn = {isLoggedIn}
+          connButtonText = {connButtonText}
+          connectWallet = {connectWallet}
+        />
+        <Header/>
+      </section>
       <About/> 
-      { nfts ? <UsersCollection
+      <section className="collection-section">
+        { (!nfts == []) ? <UsersCollection
         defaultAccount = {defaultAccount}
         isLoggedIn = {isLoggedIn}
         nfts = {nfts}
-      /> : <h1>Connect wallet to view your nfts.</h1>}
+        />   : <Error/>}
+      </section>
       <Footer/>
     </div>
   );

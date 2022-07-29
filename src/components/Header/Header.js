@@ -15,7 +15,7 @@ const theVaultAddress = "0x23256e659563dE6dB1E9D73e2E1a94DF922919BD";
 
 function Header({}) {
     const [nftContractAddress, setNftContractAddress] = useState('');
-    const [nftTokenId, setNftTokenId] = useState(0);
+    const [nftTokenId, setNftTokenId] = useState();
     const [vault, setVault] = useState([]);
     const [depositStatus, setDepositStatus] = useState(false);
     const [randomNft, setRandomNft] = useState([]);
@@ -184,8 +184,8 @@ function Header({}) {
                     <HeaderInfo />
                     <div className="deposit">
 
-                            <button onClick={handleDeposit} className="button-main">Deposit</button>
-                            {displayRandomNft()}
+                            
+                            
                             <div className="input-container">
                             <input 
                                
@@ -204,14 +204,18 @@ function Header({}) {
                                 onChange={(e) => setNftContractAddress(e.target.value)} 
                                 placeholder='Enter Contract Address' />
                             </div>
+
+                            <button onClick={handleDeposit} className="button-main">Deposit</button>
                          
                     </div>
                 </div>
                 <div className="info-right"> 
                     <TotalCollection />
+                    <div className="info-right-links">
                     <Link to="/vault-collection">View All</Link> 
                     <br/>
                     <button className="button-main" onClick={handleWithdraw}>Purchase</button> 
+                    </div>
                 </div>
                 {displayRandomNft()}
             </div>

@@ -1,17 +1,16 @@
 .navbar-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin: 0;
-  padding: 0.5em 6em;
-  position: relative;
+  padding: 0rem 5%;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 
 .logo {
   font-family: "Eksell Display Large";
-  letter-spacing: 0.1rem;
-  font-size: 20px;
-  font-weight: 400;
+  letter-spacing: 0.3rem;
+  font-size: 1.5vw;
+  font-weight: 1000;
 }
 
 .link {
@@ -23,23 +22,20 @@
   text-align: center;
 }
 
-/* .auth-container {
-  position: absolute;
-  right: 0;
-} */
+.auth-container {
+  justify-self: end;
+}
 
 .auth-container button {
   border-radius: 6px;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
-  padding: 8px 12px;
-  font-size: 0.8rem;
-  /* letter-spacing: 0.03em; */
+  padding: 1rem 1.5rem;
+  font-size: 1vw;
+  letter-spacing: 0.02em;
   font-family: "Roboto Flex", sans-serif;
   border: none;
-  /* margin-top: 56px; */
-  text-decoration: none;
 }
 
 .auth-container button:hover {
@@ -53,19 +49,20 @@
 }
 
 .link-container {
-  position: absolute;
-  height: auto;
-  right: 15.5rem;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .link-element {
-  font-size: 17px;
-  font-family: "Founders Grotesk Regular";
+  font-size: 1vw;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: lighter;
   background-color: transparent;
   color: black;
   text-decoration: none;
-  letter-spacing: 0.01em;
-  margin-right: 1.2em;
+  letter-spacing: 0.03em;
+  margin-right: 3vw;
 }
 
 .link-element:hover {
