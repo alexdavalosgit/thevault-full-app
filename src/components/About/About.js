@@ -5,23 +5,22 @@ function About() {
         
         <div className="about-container">
                 <div className='about-item'>
-                    <h3>Reach a new audience</h3>
-                    <p>A creative way to gain exposure for your latest project.
-                        Depositing to The Vault only takes a few clicks and will introduce your art to a new audience.
+                    <h3>Exposure</h3>
+                    <p>
+                    Depositing to The Vault only takes a few clicks and will introduce your artwork to a new audience.
                     </p> 
                 </div>
                 
                 <div className='about-item'>
-                    <h3>Innovative way of art collecting</h3>
-                    <p>Discover new art collections in a fun way, with an element of randomness.
-                        You might fall in love with your next NFT.
+                    <h3>Collect</h3>
+                    <p>Discover new art collections in a fun way, with the element of surprise!
+                        
                     </p>
                 </div>
                 
                 <div className='about-item'>
-                    <h3>Built for community</h3>
-                    <p> Join our DAO to make decisions on what NFTs we purchase for The Vault. We are looking
-                        to build a solution to connect relatively unknown artists and the NFT world. 
+                    <h3>Community</h3>
+                    <p> We're about building a community. Join our discord to make decisions on what nfts we purchase. 
                     </p>
                 </div>      
         </div>

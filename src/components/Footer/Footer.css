@@ -1,27 +1,21 @@
 .footer {
-  /* border: 2px solid tomato; */
-  border: 2px solid blue;
   font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
-  /* position: absolute; */
-  height: 22vh;
-  /* right: 11rem; */
+  min-height: 20vh;
   display: flex;
   justify-content: space-evenly;
   color: white;
   background-color: black;
   align-items: center;
+  padding: 2rem;
+  max-width: 100%;
+  font-size: 2vw;
 }
 
 .footer img {
-  padding: 5px;
+  padding: 1rem;
 }
 
 .footer img:hover {
   background-color: rgb(207, 145, 207);
   border-radius: 10px;
-}
-
-.f2 h5 {
-  text-decoration: underline;
-  color: whitesmoke;
 }

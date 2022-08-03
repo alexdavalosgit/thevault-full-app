@@ -1,5 +1,14 @@
 .container {
+  margin: auto;
   text-align: center;
-  font-family: "Roboto Flex", sans-serif;
+  font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
   background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+@media (max-width: 1346px) {
+  
 }

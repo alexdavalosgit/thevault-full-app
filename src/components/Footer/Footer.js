@@ -6,12 +6,12 @@ import '../Footer/Footer.css'
 
 function Footer() {
     return ( 
-        <div className="footer">
+        <div className="footer margin-ignore">
             <div className="f1">
-            <h2>THE VAULT 2022</h2>
+            <h2>@ THE VAULT. 2022.</h2>
             </div>
          <div className='f2'>
-            <h5>Connect with us</h5>
+            <h5>Connect with us:</h5>
             <a href='https://twitter.com'> 
                 <img src={twitter} alt="twitter"/> 
             </a> 
