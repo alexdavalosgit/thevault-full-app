@@ -20,7 +20,7 @@
   font-size: 4.5vw;
   text-transform: uppercase;
   font-weight: 800;
-  font-family: "Eksell Display Large";
+  font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
   margin: 0;
   padding: 0 4vw;
 }
@@ -58,7 +58,7 @@
 
 .info-right {
   min-width: 40%;
-  background-image: url(http://localhost:3000/static/media/background.6b90f1828460720287dc.jpg);
+  background-image: url(../../images/background.jpg);
   background-size: cover;
   border-radius: 0.5rem;
   max-height: 60vh;
@@ -113,7 +113,6 @@
   padding: 1.5rem 2.5rem;
   font-size: 1vw;
   letter-spacing: 0.03em;
-  font-family: "Roboto Flex", sans-serif;
   border: none;
   text-decoration: none;
 }

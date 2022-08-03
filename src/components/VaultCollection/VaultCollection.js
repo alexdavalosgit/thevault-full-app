@@ -57,14 +57,14 @@ function VaultCollection() {
     }, []);
 
     return (
-        <div>
-            <div className='container'>
-            <Link to="/home">Home</Link>
-            <TopCollections/>
-            </div>
+        <div className='vault-container'>
+            <Link to="/home" className='vault-links'>Home</Link>
             <p>Vault Collection</p>   
-            <button onClick={()=> console.log(vaultNfts)}>console log vaultnfts</button>   
-            {displayNfts()}
+            <div className='vault-content'>
+                <h2>Token ID - Contract Address</h2>
+                {displayNfts()}
+            </div>
+           
                
         </div>
     )
