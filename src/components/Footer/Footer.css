@@ -7,7 +7,7 @@
   background-color: black;
   align-items: center;
   padding: 2rem;
-  min-width: 100%;
+  max-width: 100%;
   font-size: 2vw;
 }
 
