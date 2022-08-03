@@ -58,8 +58,10 @@ function VaultCollection() {
 
     return (
         <div className='vault-container'>
-            <Link to="/home" className='vault-links'>Home</Link>
-            <p>Vault Collection</p>   
+            <div className="vault-header">
+                <Link to="/home" className='vault-links'>Home</Link>
+                <h1>Vault Collection</h1>   
+            </div>
             <div className='vault-content'>
                 <h2>Token ID - Contract Address</h2>
                 {displayNfts()}

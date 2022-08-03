@@ -1,4 +1,22 @@
-.launch-app {
+.launch-container {
+  margin: auto;
+  min-height: 100vh;
+  min-width: 100vh;
   text-align: center;
-  padding-top: 10em;
+  background-image: url(../../images/background3.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
+}
+
+.launch-app {
+  max-width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
 }
