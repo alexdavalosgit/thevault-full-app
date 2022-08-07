@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import '../RandomNft/RandomNft.css'
 
-const RandomNft = ({nft, image, name}) => {
+const RandomNft = ({nft, image, name, randomTxHash}) => {
   
   return (
     <article className='review'>
-      <h4 className='job'>You have received:</h4> 
+      <h4 className='job'>Congratulations! You have received token #{nft[0]} from
+      the {name} collection!</h4> 
       <div className='img-container'>
         {image ? <img 
               src="https://ipfs.io/ipfs/QmYrxAviWHGugdikgU1Awc8MRtfqxMYYRmBuCTMEc5mCAx"
               alt='random nft'
-              className='person-img' /> : <p className='image-error'>error: could not retrieve image</p>}
+              className='person-img' /> : 
+              <div className="error-image"><h4>could not find your image</h4></div>}
       </div>
-      <h4 className='author'>#{nft[0]} - name: {name}</h4>
+      <a href={`https://rinkeby.etherscan.io/tx/${randomTxHash}`} className="author">View Transaction</a>
   </article>
   )
 };

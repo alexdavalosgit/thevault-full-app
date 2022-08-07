@@ -5,3 +5,13 @@
   border-radius: 12px;
   font-size: 18px;
 }
+
+.error-image {
+  min-width: 100%;
+  min-height: 500px;
+  background-image: url(../../images/question.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  border:solid;
+}

@@ -23,6 +23,7 @@ function Header({}) {
     const [randomNftTokenId, setRandomNftTokenId] = useState(0);
     const [randomNftName, setRandomNftName] = useState('');
     const [randomNftImage, setRandomNftImage] = useState('');
+    const [randomTxHash, setRandomTxHash] = useState('');
     const [withdrawLoading, setWithdrawLoading] = useState(false);
     const [displayPopup, setDisplayPopup] = useState(false);
     const [withdrawError, setWithdrawError] = useState(false);
@@ -136,6 +137,7 @@ function Header({}) {
                 const logs = txData.logs[1];
                 const _tokenId = parseInt(logs.topics[3]);
                 const _contractAddress = logs.address;
+                const _txHash = logs.transactionHash;
                 console.log(_tokenId);
                 console.log(_contractAddress);
                 // setRandomNftContract(_contractAddress);
@@ -144,12 +146,14 @@ function Header({}) {
                 setRandomNft([_tokenId, _contractAddress]);
                 setRandomNftContract(_contractAddress);
                 setRandomNftTokenId(_tokenId);
+                setRandomTxHash(_txHash);
                 setWithdrawLoading(false);
 
                 // call tokenURI 
                 const tokenUri = await contractNft.tokenURI(randomNftTokenId);
                 console.log('tokenuri under this: ', tokenUri);
                 setRandomNftImage(tokenUri.image);
+                console.log(randomNftImage);
                 
 
                 // call name
@@ -173,7 +177,7 @@ function Header({}) {
         if(withdrawLoading == true) {
             return (<Popup trigger={withdrawLoading} setTrigger={setWithdrawLoading}><Loading color={color}/></Popup>) 
         } else return (<Popup trigger={displayPopup} setTrigger={setDisplayPopup}>
-                        <RandomNft nft = {randomNft} image = {randomNftImage} name = {randomNftName} />
+                        <RandomNft nft = {randomNft} image = {randomNftImage} name = {randomNftName} randomTxHash={randomTxHash} />
                         </Popup>) 
     }
 
