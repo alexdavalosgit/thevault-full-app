@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import UsersCollection from '../UsersCollection/UsersCollection';
 import About from '../About/About';
@@ -9,6 +8,7 @@ import Error from "../Error/Error";
 import '../../App.css';
 import "../AuthButton/LoginPrompt"
 import LoginPrompt from '../AuthButton/LoginPrompt';
+import Navbar from '../Navbar/Navbar';
 
 function Home() {
   const [nfts, setNfts] = useState([]);

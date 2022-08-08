@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ethers, BigNumber } from 'ethers';
 import { Link } from 'react-router-dom';
-import TopCollections from '../TopCollections/TopCollections';
 import "../VaultCollection/VaultCollection.css"
 import theVault from '../../artifacts/contracts/TheVault.sol/TheVault.json';
 
