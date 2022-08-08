@@ -6,7 +6,7 @@ import '../Footer/Footer.css'
 
 function Footer() {
     return ( 
-        <div className="footer margin-ignore">
+        <div className="footer">
             <div className="f1">
             <h2>@ THE VAULT. 2022.</h2>
             </div>
