@@ -20,7 +20,10 @@ const UsersCollection = ({ defaultAccount, isLoggedIn, nfts }) => {
       </div>
       <div className='collection-container'>
           {nfts.map((nft, index) => {
-            return <UsersCollectionCard nft={nft} key={index}/>
+            return index < 10 && (
+              <UsersCollectionCard nft={nft} key={index}/>
+            )
+          
           })}
       </div>
      {/*  <div className='collection'>

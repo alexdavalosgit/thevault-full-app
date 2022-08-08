@@ -1,7 +1,18 @@
-.launch-container {
-  margin: auto;
+body,
+html {
   min-height: 100vh;
-  min-width: 100vh;
+}
+
+.launch-section {
+  /*  min-height: 100%;
+  max-width: 100%;
+  border: solid red;
+  overflow: hidden; */
+}
+
+.launch-container {
+  min-height: 100vh;
+  min-width: 100%;
   text-align: center;
   background-image: url(../../images/background3.jpg);
   background-size: cover;
@@ -14,9 +25,16 @@
   font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
 }
 
-.launch-app {
+.launch-text {
   max-width: 100%;
   padding: 1rem;
   font-size: 2rem;
   font-weight: 800;
+}
+
+@media (max-width: 450px) {
+  .launch-text {
+    padding: 1rem 0rem;
+    font-size: 1.2rem;
+  }
 }
