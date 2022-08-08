@@ -25,10 +25,10 @@ function Navbar({ defaultAccount, isLoggedIn, connButtonText, connectWallet, set
                     <Link to="/vault-collection" className="nav-link">Collection</Link>
                 </li>
                 <li className="nav-item">
-                    <a href='https://etherscan.io/' className="nav-link">Contract</a>
+                    <a href='https://rinkeby.etherscan.io/address/0x23256e659563de6db1e9d73e2e1a94df922919bd' className="nav-link" target="_blank">Contract</a>
                 </li>
                 <li className="nav-item">
-                <a href='https://twitter.com' className="nav-link">Twitter</a>
+                <a href='https://twitter.com/TheVaultEth' className="nav-link" target="_blank">Twitter</a>
                 </li>
 
                 <AuthButton
