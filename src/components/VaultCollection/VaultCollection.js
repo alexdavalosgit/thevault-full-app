@@ -38,12 +38,13 @@ function VaultCollection() {
 
     function displayNfts() {
         if(isLoading) {
-            return <p>Loading...</p>
-        } 
+            return <h4>Loading...<br/>(Make sure you are connected to MetaMask on Rinkeby.)</h4> 
+        }
             return (
                 vaultNfts.map( (nft, index) => {
                     return <div key={index}>
-                        <h3>#{nft[0]} - {nft[1]}</h3>
+                        <h3>#{nft[0]} - <a href={`https://rinkeby.etherscan.io/address/${nft[1]}`}>View Address</a> </h3>
+                        
                     </div>
                 })
             )
@@ -62,7 +63,7 @@ function VaultCollection() {
                 <h1>Vault Collection</h1>   
             </div>
             <div className='vault-content'>
-                <h2>Token ID - Contract Address</h2>
+                <h2>#Token ID - Contract Address</h2>
                 {displayNfts()}
             </div>
            

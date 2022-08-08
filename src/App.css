@@ -1,7 +1,7 @@
 .container {
   margin: auto;
   text-align: center;
-  font-family: pixelfont, Helvetica Neue, Helvetica, Arial, sans;
+  font-family: "Inter", sans-serif;
   background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
 }
 

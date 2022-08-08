@@ -16,6 +16,7 @@ function App() {
           <Route path="/vault-collection" element={<VaultCollection/>}></Route>
           <Route path="/" element={<LaunchApp/>}></Route>
         </Routes>
+        
     </Router>
    
   );

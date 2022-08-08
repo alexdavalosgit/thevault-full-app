@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import Header from '../Header/Header';
 import UsersCollection from '../UsersCollection/UsersCollection';
 import About from '../About/About';
@@ -31,8 +31,7 @@ function Home() {
             (isLoggedIn == true && defaultAccount == null) ? disconnectHandler(): window.alert('Please disconnect through Metamask first.');
           }
     } else { //Else user alerted to install Metamask
-      setErrorMessage('You need to install Metamask');
-      window.alert(errorMessage);
+      window.alert("Please install Metamask");
     }
   }
 
@@ -70,9 +69,12 @@ function Home() {
     setIsLoggedIn(false);
   }
   // Handles account change
-  window.ethereum.on("accountsChanged", async (accounts) => {
-    setDefaultAccount(accounts[0]);
-  });
+  if(window.ethereum)
+    window.ethereum.on("accountsChanged", async (accounts) => {
+      setDefaultAccount(accounts[0]);
+    });
+
+  
 
   return (
     <div className="container">

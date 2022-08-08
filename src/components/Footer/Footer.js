@@ -12,7 +12,7 @@ function Footer() {
             </div>
          <div className='f2'>
             <h5>Connect with us:</h5>
-            <a href='https://twitter.com'> 
+            <a href='https://twitter.com/TheVaultEth'> 
                 <img src={twitter} alt="twitter"/> 
             </a> 
             <a href='https://telegram.org'>

@@ -92,7 +92,7 @@ function Header({}) {
             try {              
                 // Require ownership of token
                 if( isOwner !== signerAddress) {
-                    console.log('You do not own this token.');
+                    window.alert('You do not own this token.');
                 // Require approval of ERC721 transfer
                 } else if(approveState == 0x0000000000000000000000000000000000000000) {
                     const tokenApprove = await contractNft.approve(theVaultAddress, nftTokenId);
