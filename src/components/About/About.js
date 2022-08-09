@@ -22,7 +22,13 @@ function About() {
                     <h3>Community</h3>
                     <p> We're about building a community. Join our discord to make decisions on what nfts we purchase. 
                     </p>
-                </div>      
+                </div> 
+
+                <div>
+                    <button><a href="https://drive.proton.me/urls/KNN9Q42JYG#XuIOcfsWnVlj"
+                    target="_blank"
+                    >Roadmap</a></button>
+                </div>   
         </div>
        
 
