@@ -25,9 +25,8 @@ function About() {
                 </div> 
 
                 <div>
-                    <button><a href="https://drive.proton.me/urls/KNN9Q42JYG#XuIOcfsWnVlj"
-                    target="_blank"
-                    >Roadmap</a></button>
+                    <div className="about-button"> <a href="https://drive.proton.me/urls/KNN9Q42JYG#XuIOcfsWnVlj" target="_blank" rel="noreferrer">Roadmap</a></div>
+                   
                 </div>   
         </div>
        
