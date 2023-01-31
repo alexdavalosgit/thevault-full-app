@@ -21,28 +21,28 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
- module.exports = {
+module.exports = {
   solidity: "0.8.4",
   defaultNetwork: "hardhat",
   paths: {
-    artifacts: './src/artifacts',
+    artifacts: "./src/artifacts",
   },
   networks: {
-      rinkeby: {
-        url: process.env.REACT_APP_RINKEBY_RPC_URL,
-        accounts: [process.env.REACT_APP_PRIVATE_KEY],
-      },
+    goerli: {
+      url: process.env.REACT_APP_GOERLI_RPC_URL,
+      accounts: [process.env.REACT_APP_PRIVATE_KEY],
+      allowUnlimitedContractSize: true,
     },
-    etherscan: {
-      apiKey: process.env.REACT_APP_ETHERSCAN_KEY,
-    }
-  };
+  },
+  etherscan: {
+    apiKey: process.env.REACT_APP_ETHERSCAN_KEY,
+  },
+};
 
- // ropsten: {
-    //   url: "https://ropsten.infura.io/v3/projectid",
-    //   accounts: [process.env.a2key]
-    // },
+// ropsten: {
+//   url: "https://ropsten.infura.io/v3/projectid",
+//   accounts: [process.env.a2key]
+// },
 
-        // hardhat: {
-      // chainId: 1337,
-    
+// hardhat: {
+// chainId: 1337,
