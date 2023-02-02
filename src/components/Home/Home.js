@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import Header from "../Header/Header";
 import UsersCollection from "../UsersCollection/UsersCollection";
 import About from "../About/About";
@@ -6,8 +7,7 @@ import Footer from "../Footer/Footer";
 import Error from "../Error/Error";
 import "../../App.css";
 import "../AuthButton/LoginPrompt";
-import LoginPrompt from "../AuthButton/LoginPrompt";
-import Navbar from "../Navbar/Navbar";
+import NavbarComp from "../Navbar/NavbarComp";
 
 function Home() {
   const [nfts, setNfts] = useState([]);
@@ -78,32 +78,34 @@ function Home() {
     });
 
   return (
-    <div className="container">
-      <section className="header">
-        <Navbar
-          defaultAccount={defaultAccount}
-          errorMessage={errorMessage}
-          setErrorMessage={setErrorMessage}
-          isLoggedIn={isLoggedIn}
-          connButtonText={connButtonText}
-          connectWallet={connectWallet}
-        />
-        <Header />
-      </section>
-      <About />
-      <section className="collection-section">
-        {!nfts === [] ? (
-          <UsersCollection
+    <>
+      <Container fluid className="p-0">
+        <section className="header">
+          <NavbarComp
             defaultAccount={defaultAccount}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
             isLoggedIn={isLoggedIn}
-            nfts={nfts}
+            connButtonText={connButtonText}
+            connectWallet={connectWallet}
           />
-        ) : (
-          <Error />
-        )}
-      </section>
-      <Footer />
-    </div>
+          <Header />
+        </section>
+        <About />
+        <section className="collection-section">
+          {!nfts === [] ? (
+            <UsersCollection
+              defaultAccount={defaultAccount}
+              isLoggedIn={isLoggedIn}
+              nfts={nfts}
+            />
+          ) : (
+            <Error />
+          )}
+        </section>
+        <Footer />
+      </Container>
+    </>
   );
 }
 export default Home;

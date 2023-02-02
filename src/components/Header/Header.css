@@ -1,3 +1,7 @@
+.modal-footer {
+  justify-content: start;
+}
+
 .main-container {
   display: flex;
   padding: 5% 15%;
@@ -33,24 +37,9 @@
   font-weight: 350;
 }
 
-.deposit {
-  display: flex;
-  align-items: center;
-  margin-top: 4vh;
-  justify-content: center;
-  padding: 0px 4vw;
-}
-
 .input-container input {
-  padding: 2px;
-  text-align: center;
   font-size: 1rem;
-  min-width: 100%;
-}
-
-.input-container {
-  max-width: 100%;
-  padding-right: 1rem;
+  width: 100%;
 }
 
 /* RIGHT GRID SIDE */
