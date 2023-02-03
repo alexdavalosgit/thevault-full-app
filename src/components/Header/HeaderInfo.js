@@ -1,15 +1,13 @@
-import "../Header/Header.css"
+import { Container } from "react-bootstrap";
+import "../Header/Header.css";
 
 function HeaderInfo() {
-    return ( 
-        <>
-            <h2 className="title">Collect<br/> randomly</h2> 
-            <br/>
-            <p className="text">
-                Buy random nft. Donate nft. Proceeds go to charity.
-            </p>
-        </>
-     );
+  return (
+    <Container>
+      <h2 className="title">Collect randomly</h2>
+      <p className="text">Buy a random erc-721 token from the vault.</p>
+    </Container>
+  );
 }
 
 export default HeaderInfo;

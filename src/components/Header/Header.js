@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ethers, BigNumber } from "ethers";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import theVault from "../../artifacts/contracts/TheVault.sol/TheVault.json";
 import nftContract from "../../artifacts/@openzeppelin/contracts/token/ERC721/ERC721.sol/ERC721.json";
 import TotalCollection from "../TotalCollection/TotalCollection";
@@ -212,7 +212,7 @@ function Header({}) {
 
   // Get random Nft
   const displayRandomNft = () => {
-    if (withdrawLoading == true) {
+    if (withdrawLoading === true) {
       return (
         <Popup trigger={withdrawLoading} setTrigger={setWithdrawLoading}>
           <Loading color={color} />
@@ -232,32 +232,29 @@ function Header({}) {
   };
 
   return (
-    <>
-      <div className="main-container">
-        <div className="info-left">
+    <div className="">
+      <div className="main-header d-flex justify-content-center ">
+        <Container className="header p-5">
           <HeaderInfo />
-          <PurchasePopup
-            nftContractAddress={nftContractAddress}
-            setNftContractAddress={setNftContractAddress}
-            handleDeposit={handleDeposit}
-            nftTokenId={nftTokenId}
-            setNftTokenId={setNftTokenId}
-            isLoading={depositLoading}
-          />
-        </div>
-        <div className="info-right">
-          <TotalCollection />
-          <div className="info-right-links">
-            <Link to="/vault-collection">View All</Link>
-            <br />
-            <button className="button-main" onClick={handleWithdraw}>
+          <div className="button-container">
+            <PurchasePopup
+              nftContractAddress={nftContractAddress}
+              setNftContractAddress={setNftContractAddress}
+              handleDeposit={handleDeposit}
+              nftTokenId={nftTokenId}
+              setNftTokenId={setNftTokenId}
+              isLoading={depositLoading}
+            />
+            <Button onClick={handleWithdraw} variant="outline-dark">
               Purchase
-            </button>
+            </Button>
           </div>
-        </div>
+        </Container>
         {displayRandomNft()}
       </div>
-    </>
+
+      <TotalCollection />
+    </div>
   );
 }
 

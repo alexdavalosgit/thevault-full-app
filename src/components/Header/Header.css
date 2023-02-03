@@ -2,21 +2,29 @@
   justify-content: start;
 }
 
-.main-container {
-  display: flex;
-  padding: 5% 15%;
-  min-height: 80vh;
+.main-header {
+  background-color: #d6b9fc;
+  min-height: 90vh;
   max-width: 100%;
-  gap: 2rem;
 }
 
 /* LEFT GRID SIDE */
 
-.info-left {
-  max-width: 100%;
-  max-height: 100%;
-  overflow: auto;
-  text-align: center;
+.header-info {
+  border: 2px solid black;
+}
+
+.border-solid {
+  border: 2px solid;
+}
+
+.stats-container {
+  background-color: #d6b9fc;
+}
+
+.border-white-round {
+  border: solid 1px white;
+  border-radius: 1rem;
 }
 
 /* Header Info CSS */
@@ -40,58 +48,6 @@
 .input-container input {
   font-size: 1rem;
   width: 100%;
-}
-
-/* RIGHT GRID SIDE */
-
-.info-right {
-  min-width: 40%;
-  background-image: url(../../images/background.jpg);
-  background-size: cover;
-  border-radius: 0.5rem;
-  max-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0rem;
-  overflow: hidden;
-  justify-content: center;
-}
-
-.info-right button {
-  margin-top: 1rem;
-}
-
-.info-right a {
-  color: black;
-  font-size: 1rem;
-}
-.info-right a:hover {
-  color: whitesmoke;
-}
-
-.info-right-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  min-width: 100%;
-  justify-content: center;
-}
-
-.info-right-text h1 {
-  font-size: 15rem;
-  margin: 0;
-}
-
-.info-right-text p {
-  font-weight: 500;
-  font-size: 1.5rem;
-}
-
-.info-right-links {
-  min-width: 100%;
-  padding-bottom: 1rem;
 }
 
 .button-main {
@@ -148,41 +104,9 @@
     padding: 1rem;
     gap: 2rem;
   }
-  .info-left {
-    padding: 0rem 2rem;
-    text-align: center;
-    min-height: 30vh;
-  }
-  .info-left .title {
-    font-size: 2.5rem;
-  }
-  .info-left .text {
-    font-size: 1.5rem;
-  }
-
-  .info-right {
-    min-height: 50vh;
-    min-width: 80%;
-    margin-bottom: 2rem;
-  }
-  .info-right-text {
-    display: block;
-  }
-  .info-right-text h1 {
-    font-size: 13rem;
-  }
-  .info-right-text p {
-    font-size: 1.7rem;
-  }
-  .info-right-links a {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 450px) {
-  .info-left {
-    padding: 0;
-  }
   .title {
     padding: 0;
   }
@@ -192,9 +116,7 @@
   .input-container {
     padding: 0 0.5rem;
   }
-  .info-right-text h1 {
-    font-size: 12rem;
-  }
+
   .button-main {
     padding: 1rem 1.5rem;
     font-size: 1rem;

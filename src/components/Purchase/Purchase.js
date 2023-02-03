@@ -16,7 +16,8 @@ function PurchasePopup({
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="outline-dark" onClick={handleShow}>
+        {" "}
         Deposit
       </Button>
 
@@ -57,7 +58,7 @@ function PurchasePopup({
           </div>
         </Modal.Body>
         <Modal.Footer className="flex-start">
-          <Button variant="primary" onClick={handleDeposit}>
+          <Button className="btn-primary" onClick={handleDeposit}>
             Deposit
           </Button>
         </Modal.Footer>

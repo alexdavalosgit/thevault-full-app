@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { ethers, BigNumber } from "ethers";
 import "../VaultCollection/VaultCollection.css";
 import theVault from "../../artifacts/contracts/TheVault.sol/TheVault.json";
@@ -6,7 +8,6 @@ import "../Header/Header.css";
 import { theVaultAddress } from "../../utils";
 
 function TotalCollection() {
-  const [isLoading, setIsLoading] = useState(true);
   const [balance, setBalance] = useState();
 
   // Get Vault NFTS
@@ -32,9 +33,18 @@ function TotalCollection() {
   }, []);
 
   return (
-    <div className="info-right-text">
-      <h1> {balance} </h1>
-      <p>nfts in the vault.</p>
+    <div className="stats-container text-white pb-5 px-5">
+      <Row className="gap-4">
+        <Col className="border-white-round text-center p-2">
+          <h3 className="fw-bold">How many ERC-721 tokens in the vault:</h3>
+          <h2 className="">{balance}</h2>
+          <Link to="/vault-collection">View All</Link>
+        </Col>
+        <Col className="border-white-round text-center p-2">
+          <h2>Total transactions: </h2>
+          <h2>500</h2>
+        </Col>
+      </Row>
     </div>
   );
 }
