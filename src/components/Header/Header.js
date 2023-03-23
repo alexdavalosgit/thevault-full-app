@@ -235,20 +235,15 @@ function Header({}) {
     <div className="">
       <div className="main-header d-flex justify-content-center ">
         <Container className="header p-5">
-          <HeaderInfo />
-          <div className="button-container">
-            <PurchasePopup
-              nftContractAddress={nftContractAddress}
-              setNftContractAddress={setNftContractAddress}
-              handleDeposit={handleDeposit}
-              nftTokenId={nftTokenId}
-              setNftTokenId={setNftTokenId}
-              isLoading={depositLoading}
-            />
-            <Button onClick={handleWithdraw} variant="outline-dark">
-              Purchase
-            </Button>
-          </div>
+          <HeaderInfo
+            nftContractAddress={nftContractAddress}
+            setNftContractAddress={setNftContractAddress}
+            handleDeposit={handleDeposit}
+            handleWithdraw={handleWithdraw}
+            nftTokenId={nftTokenId}
+            setNftTokenId={setNftTokenId}
+            depositLoading={depositLoading}
+          />
         </Container>
         {displayRandomNft()}
       </div>

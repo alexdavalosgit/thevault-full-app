@@ -1,12 +1,34 @@
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import "../Header/Header.css";
+import PurchasePopup from "../Purchase/Purchase";
 
-function HeaderInfo() {
+function HeaderInfo({
+  nftTokenId,
+  setNftTokenId,
+  nftContractAddress,
+  setNftContractAddress,
+  handleDeposit,
+  depositLoading,
+  handleWithdraw,
+}) {
   return (
-    <Container>
+    <>
       <h2 className="title">Collect randomly</h2>
       <p className="text">Buy a random erc-721 token from the vault.</p>
-    </Container>
+      <div className="button-container">
+        <PurchasePopup
+          nftContractAddress={nftContractAddress}
+          setNftContractAddress={setNftContractAddress}
+          handleDeposit={handleDeposit}
+          nftTokenId={nftTokenId}
+          setNftTokenId={setNftTokenId}
+          isLoading={depositLoading}
+        />
+        <Button onClick={handleWithdraw} variant="outline-dark">
+          Purchase
+        </Button>
+      </div>
+    </>
   );
 }
 

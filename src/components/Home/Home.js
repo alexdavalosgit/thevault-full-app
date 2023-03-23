@@ -80,15 +80,15 @@ function Home() {
   return (
     <>
       <Container fluid className="p-0">
+        <NavbarComp
+          defaultAccount={defaultAccount}
+          errorMessage={errorMessage}
+          setErrorMessage={setErrorMessage}
+          isLoggedIn={isLoggedIn}
+          connButtonText={connButtonText}
+          connectWallet={connectWallet}
+        />
         <section className="header">
-          <NavbarComp
-            defaultAccount={defaultAccount}
-            errorMessage={errorMessage}
-            setErrorMessage={setErrorMessage}
-            isLoggedIn={isLoggedIn}
-            connButtonText={connButtonText}
-            connectWallet={connectWallet}
-          />
           <Header />
         </section>
         <About />
