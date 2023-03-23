@@ -5,7 +5,7 @@ import "../Navbar/Navbar.css";
 const AuthButton = ({ connButtonText, connectWallet }) => {
   return (
     <div className="">
-      <Button onClick={connectWallet} variant="outline-dark">
+      <Button onClick={connectWallet} variant="primary">
         {connButtonText}
       </Button>
     </div>

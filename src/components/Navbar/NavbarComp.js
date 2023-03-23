@@ -8,7 +8,7 @@ function NavbarComp({
   connectWallet,
 }) {
   return (
-    <Navbar expand="md" sticky="top">
+    <Navbar bg="dark" expand="md" sticky="top">
       <Container>
         <Navbar.Brand href="/home" className="logo">
           The Vault

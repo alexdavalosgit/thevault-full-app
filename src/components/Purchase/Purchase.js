@@ -16,7 +16,7 @@ function PurchasePopup({
 
   return (
     <>
-      <Button variant="outline-dark" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow}>
         {" "}
         Deposit
       </Button>

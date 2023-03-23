@@ -33,19 +33,19 @@ function TotalCollection() {
   }, []);
 
   return (
-    <div className="stats-container text-white pb-5 px-5">
-      <Row className="gap-4">
-        <Col className="border-white-round text-center p-2">
-          <h3 className="fw-bold">How many ERC-721 tokens in the vault:</h3>
+    <Container fluid className="text-white ">
+      <Row className="gap-3 text-center">
+        <Col sm={12} md={6} className="stats-element">
+          <h3 className="fw-bold">WHAT'S IN THE BOX?</h3>
           <h2 className="">{balance}</h2>
-          <Link to="/vault-collection">View All</Link>
+          <Link to="/vault-collection">View</Link>
         </Col>
-        <Col className="border-white-round text-center p-2">
-          <h2>Total transactions: </h2>
+        <Col className="stats-element">
+          <h2>How Many TX's? </h2>
           <h2>500</h2>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 }
 

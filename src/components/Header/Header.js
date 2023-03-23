@@ -11,6 +11,7 @@ import Popup from "../Popup/Popup";
 import RandomNft from "../RandomNft/RandomNft";
 import Error from "../Error/Error";
 import { theVaultAddress } from "../../utils";
+import ImageSlider from "../ImageSlider/ImageSlider";
 
 function Header({}) {
   const [nftContractAddress, setNftContractAddress] = useState("");
@@ -230,24 +231,20 @@ function Header({}) {
   };
 
   return (
-    <>
-      <div className="main-header d-flex justify-content-center ">
-        <Container className="header p-5">
-          <HeaderInfo
-            nftContractAddress={nftContractAddress}
-            setNftContractAddress={setNftContractAddress}
-            handleDeposit={handleDeposit}
-            handleWithdraw={handleWithdraw}
-            nftTokenId={nftTokenId}
-            setNftTokenId={setNftTokenId}
-            depositLoading={depositLoading}
-          />
-        </Container>
-        {displayRandomNft()}
-      </div>
-
+    <div className="header">
+      <HeaderInfo
+        nftContractAddress={nftContractAddress}
+        setNftContractAddress={setNftContractAddress}
+        handleDeposit={handleDeposit}
+        handleWithdraw={handleWithdraw}
+        nftTokenId={nftTokenId}
+        setNftTokenId={setNftTokenId}
+        depositLoading={depositLoading}
+      />
+      {displayRandomNft()}
+      <ImageSlider />
       <TotalCollection />
-    </>
+    </div>
   );
 }
 

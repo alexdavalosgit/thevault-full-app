@@ -78,34 +78,32 @@ function Home() {
     });
 
   return (
-    <>
-      <Container fluid className="p-0">
-        <NavbarComp
-          defaultAccount={defaultAccount}
-          errorMessage={errorMessage}
-          setErrorMessage={setErrorMessage}
-          isLoggedIn={isLoggedIn}
-          connButtonText={connButtonText}
-          connectWallet={connectWallet}
-        />
-        <section className="header">
-          <Header />
-        </section>
-        <About />
-        <section className="collection-section">
-          {!nfts === [] ? (
-            <UsersCollection
-              defaultAccount={defaultAccount}
-              isLoggedIn={isLoggedIn}
-              nfts={nfts}
-            />
-          ) : (
-            <Error />
-          )}
-        </section>
-        <Footer />
-      </Container>
-    </>
+    <Container fluid className="p-0">
+      <NavbarComp
+        defaultAccount={defaultAccount}
+        errorMessage={errorMessage}
+        setErrorMessage={setErrorMessage}
+        isLoggedIn={isLoggedIn}
+        connButtonText={connButtonText}
+        connectWallet={connectWallet}
+      />
+      <section className="header-section">
+        <Header />
+      </section>
+      <About />
+      <section className="collection-section">
+        {!nfts === [] ? (
+          <UsersCollection
+            defaultAccount={defaultAccount}
+            isLoggedIn={isLoggedIn}
+            nfts={nfts}
+          />
+        ) : (
+          <Error />
+        )}
+      </section>
+      <Footer />
+    </Container>
   );
 }
 export default Home;

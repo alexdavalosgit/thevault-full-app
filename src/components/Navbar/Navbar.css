@@ -22,7 +22,6 @@
   text-decoration: none;
 }
 
-/* Navbar hamburger tutorial */
 * {
   padding: 0;
   margin: 0;
@@ -35,15 +34,13 @@ li {
 
 .nav-item a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:visited {
-  color: black;
+  color: white;
 }
 
 .navbar {
-  background-color: whitesmoke;
   border-bottom: 0.5px solid black;
-  padding: 1rem 0rem;
 }

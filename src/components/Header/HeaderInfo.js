@@ -1,6 +1,5 @@
 import { Container, Button } from "react-bootstrap";
 import "../Header/Header.css";
-import ImageSlider from "../ImageSlider/ImageSlider";
 import PurchasePopup from "../Purchase/Purchase";
 
 function HeaderInfo({
@@ -13,9 +12,11 @@ function HeaderInfo({
   handleWithdraw,
 }) {
   return (
-    <>
-      <h2 className="title">Collect randomly</h2>
-      <p className="text">Buy a random erc-721 token from the vault.</p>
+    <div className="header-info">
+      <div className="header-text">
+        <h2 className="title">Collect randomly</h2>
+        <p className="text">Buy a random erc-721 token from the vault.</p>
+      </div>
       <div className="button-container">
         <PurchasePopup
           nftContractAddress={nftContractAddress}
@@ -25,15 +26,11 @@ function HeaderInfo({
           setNftTokenId={setNftTokenId}
           isLoading={depositLoading}
         />
-        <Button onClick={handleWithdraw} variant="outline-dark">
+        <Button onClick={handleWithdraw} variant="primary">
           Purchase
         </Button>
       </div>
-      <ImageSlider />
-      <p className="pt-4">
-        Note: Not representative of what's in the smart contract.
-      </p>
-    </>
+    </div>
   );
 }
 
