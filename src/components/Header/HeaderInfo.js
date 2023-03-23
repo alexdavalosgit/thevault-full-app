@@ -26,7 +26,7 @@ function HeaderInfo({
           setNftTokenId={setNftTokenId}
           isLoading={depositLoading}
         />
-        <Button onClick={handleWithdraw} variant="primary">
+        <Button onClick={handleWithdraw} variant="primary" className="mx-2">
           Purchase
         </Button>
       </div>

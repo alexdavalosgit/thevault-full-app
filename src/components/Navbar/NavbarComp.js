@@ -8,7 +8,7 @@ function NavbarComp({
   connectWallet,
 }) {
   return (
-    <Navbar bg="dark" expand="md" sticky="top">
+    <Navbar className="navbar" variant="dark" expand="md" sticky="top">
       <Container>
         <Navbar.Brand href="/home" className="logo">
           The Vault
@@ -16,20 +16,18 @@ function NavbarComp({
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link
-              href="https://twitter.com/TheVaultEth"
-              target="_blank"
-              className="nav-link"
-            >
-              Twitter
-            </Nav.Link>
-            <Nav.Link
-              href="https://goerli.etherscan.io/address/0xc2d0EC0391cd47E5f5CebFeF967EbD55dfCCFEe6"
-              target="_blank"
-              className="nav-link"
-            >
-              Contract
-            </Nav.Link>
+            <div className="nav-link">
+              <Nav.Link href="https://twitter.com/TheVaultEth" target="_blank">
+                Twitter
+              </Nav.Link>
+              <Nav.Link
+                href="https://goerli.etherscan.io/address/0xc2d0EC0391cd47E5f5CebFeF967EbD55dfCCFEe6"
+                target="_blank"
+              >
+                {" "}
+                Contract{" "}
+              </Nav.Link>
+            </div>
             <AuthButton
               defaultAccount={defaultAccount}
               isLoggedIn={isLoggedIn}

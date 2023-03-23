@@ -1,25 +1,26 @@
+.navbar {
+  background-color: black;
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   letter-spacing: 0.3rem;
   font-size: 1.5rem;
   font-weight: 900;
 }
 
-.auth-container button {
-  font-family: "Inter", sans-serif;
-  border-radius: 6px;
-  text-transform: uppercase;
-  color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  border: none;
-}
-
-.auth-container button:hover {
-  color: rgba(255, 255, 255);
-  filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 0px 10px);
-  text-decoration: none;
+.auth-container {
+  display: flex;
+  align-items: center;
 }
 
 * {
@@ -43,4 +44,14 @@ a:visited {
 
 .navbar {
   border-bottom: 0.5px solid black;
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    flex-direction: column;
+  }
+
+  .auth-container {
+    justify-content: center;
+  }
 }

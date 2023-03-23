@@ -4,7 +4,7 @@ import "../Navbar/Navbar.css";
 
 const AuthButton = ({ connButtonText, connectWallet }) => {
   return (
-    <div className="">
+    <div className="auth-container">
       <Button onClick={connectWallet} variant="primary">
         {connButtonText}
       </Button>

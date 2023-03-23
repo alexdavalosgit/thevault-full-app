@@ -10,4 +10,25 @@ body {
 
 .btn-primary {
   background-color: #d6b9fc;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #b48cf1;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(214, 185, 252, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(2px);
 }
