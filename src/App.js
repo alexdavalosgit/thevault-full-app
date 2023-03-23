@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import LaunchApp from "./components/LaunchApp/LaunchApp";
 import "./App.css";
