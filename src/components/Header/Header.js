@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
-import { ethers, BigNumber } from "ethers";
-import { Link } from "react-router-dom";
-import { Button, Container } from "react-bootstrap";
+import { useState } from "react";
+import { ethers } from "ethers";
+import { Container } from "react-bootstrap";
 import theVault from "../../artifacts/contracts/TheVault.sol/TheVault.json";
 import nftContract from "../../artifacts/@openzeppelin/contracts/token/ERC721/ERC721.sol/ERC721.json";
 import TotalCollection from "../TotalCollection/TotalCollection";
@@ -12,7 +11,6 @@ import Popup from "../Popup/Popup";
 import RandomNft from "../RandomNft/RandomNft";
 import Error from "../Error/Error";
 import { theVaultAddress } from "../../utils";
-import PurchasePopup from "../Purchase/Purchase";
 
 function Header({}) {
   const [nftContractAddress, setNftContractAddress] = useState("");
@@ -232,7 +230,7 @@ function Header({}) {
   };
 
   return (
-    <div className="">
+    <>
       <div className="main-header d-flex justify-content-center ">
         <Container className="header p-5">
           <HeaderInfo
@@ -249,7 +247,7 @@ function Header({}) {
       </div>
 
       <TotalCollection />
-    </div>
+    </>
   );
 }
 

@@ -1,5 +1,6 @@
 import { Container, Button } from "react-bootstrap";
 import "../Header/Header.css";
+import ImageSlider from "../ImageSlider/ImageSlider";
 import PurchasePopup from "../Purchase/Purchase";
 
 function HeaderInfo({
@@ -28,6 +29,10 @@ function HeaderInfo({
           Purchase
         </Button>
       </div>
+      <ImageSlider />
+      <p className="pt-4">
+        Note: Not representative of what's in the smart contract.
+      </p>
     </>
   );
 }
