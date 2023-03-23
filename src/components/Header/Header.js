@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ethers, BigNumber } from "ethers";
 import { Link } from "react-router-dom";
+import { Button, Container } from "react-bootstrap";
 import theVault from "../../artifacts/contracts/TheVault.sol/TheVault.json";
 import nftContract from "../../artifacts/@openzeppelin/contracts/token/ERC721/ERC721.sol/ERC721.json";
 import TotalCollection from "../TotalCollection/TotalCollection";
@@ -11,14 +12,13 @@ import Popup from "../Popup/Popup";
 import RandomNft from "../RandomNft/RandomNft";
 import Error from "../Error/Error";
 import { theVaultAddress } from "../../utils";
+import PurchasePopup from "../Purchase/Purchase";
 
 function Header({}) {
   const [nftContractAddress, setNftContractAddress] = useState("");
   const [nftTokenId, setNftTokenId] = useState();
   const [vault, setVault] = useState([]);
-  const [depositStatus, setDepositStatus] = useState(false);
   const [randomNft, setRandomNft] = useState([]);
-  const [randomNftContract, setRandomNftContract] = useState("");
   const [randomNftTokenId, setRandomNftTokenId] = useState(0);
   const [randomNftName, setRandomNftName] = useState("");
   const [randomNftImage, setRandomNftImage] = useState("");
@@ -27,6 +27,8 @@ function Header({}) {
   const [displayPopup, setDisplayPopup] = useState(false);
   const [withdrawError, setWithdrawError] = useState(false);
   const [color, setColor] = useState("#50E3C2");
+  const [depositLoading, setDepositLoading] = useState(false);
+  const [depositSuccess, setDepositSuccess] = useState(false);
 
   async function requestAccount() {
     await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -74,6 +76,7 @@ function Header({}) {
   // Deposit Function //
   async function handleDeposit() {
     if (window.ethereum) {
+      setDepositLoading(true);
       await requestAccount();
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
@@ -98,6 +101,7 @@ function Header({}) {
         // Require ownership of token
         if (isOwner !== signerAddress) {
           window.alert("You do not own this token.");
+          setDepositLoading(false);
           // Require approval of ERC721 transfer
         } else if (approveState == 0x0000000000000000000000000000000000000000) {
           const tokenApprove = await contractNft.approve(
@@ -111,6 +115,13 @@ function Header({}) {
             nftContractAddress
           );
           console.log("response: ", response);
+          const isMined = await isTransactionMined(response.hash);
+          console.log("istransmined: ", isMined);
+          if (isMined) {
+            setDepositLoading(false);
+            setDepositSuccess(true);
+          }
+
           // Deposit to contract
         } else {
           const response = await contract.deposit(
@@ -118,7 +129,12 @@ function Header({}) {
             nftContractAddress
           );
           console.log("response: ", response);
-          isTransactionMined(response.hash);
+          const isMined = await isTransactionMined(response.hash);
+          console.log("istransmined: ", isMined);
+          if (isMined) {
+            setDepositLoading(false);
+            setDepositSuccess(true);
+          }
         }
       } catch (err) {
         console.log("error: ", err);
@@ -162,11 +178,9 @@ function Header({}) {
         const _txHash = logs.transactionHash;
         console.log(_tokenId);
         console.log(_contractAddress);
-        // setRandomNftContract(_contractAddress);
 
         // update nft state
         setRandomNft([_tokenId, _contractAddress]);
-        setRandomNftContract(_contractAddress);
         setRandomNftTokenId(_tokenId);
         setRandomTxHash(_txHash);
         setWithdrawLoading(false);
@@ -198,7 +212,7 @@ function Header({}) {
 
   // Get random Nft
   const displayRandomNft = () => {
-    if (withdrawLoading == true) {
+    if (withdrawLoading === true) {
       return (
         <Popup trigger={withdrawLoading} setTrigger={setWithdrawLoading}>
           <Loading color={color} />
@@ -218,47 +232,24 @@ function Header({}) {
   };
 
   return (
-    <>
-      <div className="main-container">
-        <div className="info-left">
-          <HeaderInfo />
-          <div className="deposit">
-            <div className="input-container">
-              <input
-                type="text"
-                required
-                value={nftTokenId}
-                onChange={(e) => setNftTokenId(e.target.value)}
-                placeholder="Enter Token Id"
-              />
-              <br />
-              <input
-                type="text"
-                required
-                value={nftContractAddress}
-                onChange={(e) => setNftContractAddress(e.target.value)}
-                placeholder="Enter Contract Address"
-              />
-            </div>
-
-            <button onClick={handleDeposit} className="button-main">
-              Deposit
-            </button>
-          </div>
-        </div>
-        <div className="info-right">
-          <TotalCollection />
-          <div className="info-right-links">
-            <Link to="/vault-collection">View All</Link>
-            <br />
-            <button className="button-main" onClick={handleWithdraw}>
-              Purchase
-            </button>
-          </div>
-        </div>
+    <div className="">
+      <div className="main-header d-flex justify-content-center ">
+        <Container className="header p-5">
+          <HeaderInfo
+            nftContractAddress={nftContractAddress}
+            setNftContractAddress={setNftContractAddress}
+            handleDeposit={handleDeposit}
+            handleWithdraw={handleWithdraw}
+            nftTokenId={nftTokenId}
+            setNftTokenId={setNftTokenId}
+            depositLoading={depositLoading}
+          />
+        </Container>
         {displayRandomNft()}
       </div>
-    </>
+
+      <TotalCollection />
+    </div>
   );
 }
 

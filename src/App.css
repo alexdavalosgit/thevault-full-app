@@ -1,10 +1,13 @@
 .container {
   margin: auto;
   text-align: center;
-  font-family: "Inter", sans-serif;
   background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
 }
 
 body {
-  background-color: whitesmoke;
+  font-family: "Inter", sans-serif;
+}
+
+.btn-primary {
+  background-color: #d6b9fc;
 }

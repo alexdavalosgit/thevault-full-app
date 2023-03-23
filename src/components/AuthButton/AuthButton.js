@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import '../Navbar/Navbar.css';
+import React from "react";
+import { Button } from "react-bootstrap";
+import "../Navbar/Navbar.css";
 
-const AuthButton = ({ connButtonText, connectWallet}) => {
-  
-
-    return (
-      <div className='auth-container'>
-          <button onClick={connectWallet}>{connButtonText}</button>
-      </div>
-    );
+const AuthButton = ({ connButtonText, connectWallet }) => {
+  return (
+    <div className="">
+      <Button onClick={connectWallet} variant="outline-dark">
+        {connButtonText}
+      </Button>
+    </div>
+  );
 };
 
 export default AuthButton;
